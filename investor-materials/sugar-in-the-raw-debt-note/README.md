@@ -1,8 +1,9 @@
 # Sugar in the Raw · Private Debt Note (investor one-pager)
 
-A branded, single-page summary of the $100,000 debt piece for Sugar in the Raw:
+A white, single-page summary of the $100,000 debt piece for Sugar in the Raw:
 22% annual return paid monthly, principal returned as a balloon at month 24,
 $44,000 total interest (44% on capital), $144,000 total back to the investor.
+Black logo, one headline, the growth chart, four terms, address and contact.
 
 ## Deliverables (in `dist/`)
 
@@ -10,27 +11,32 @@ $44,000 total interest (44% on capital), $144,000 total back to the investor.
 |---|---|
 | `sugar-in-the-raw-debt-note.pdf` | US Letter, one page. Attach to the note packet or email. |
 | `sugar-in-the-raw-debt-note.png` | 2x PNG of the sheet (1632 × 2112). Text/DM friendly. |
-| `index.html` | Self-contained web version (fonts and logo embedded) with hover readout and the full schedule table. |
+| `index.html` | Self-contained web version (fonts and logo embedded) with a hover readout and the full schedule table. |
 | `schedule.csv` | The 24-month payment schedule as data. |
+
+`canvas/` holds the same sheet as a Letter-size design artboard
+(`Main.dc.html`, `canvas.json`, the logo), the source of the editable design
+canvas where the layout can be tweaked by hand and exported as PNG/PDF.
+
+## Changing the terms
+
+Edit the constants at the top of `build.js` (`PRINCIPAL`, `ANNUAL_RATE`,
+`TERM_MONTHS`, `ISSUE_DATE_LABEL`, `ADDRESS_LINE_1/2`), then rebuild. Every
+figure on the page is derived from them: headline, terms, chart, schedule,
+fine print.
+
+```bash
+node build.js        # -> dist/index.html, dist/schedule.csv, canvas/Main.dc.html
+node render.js       # -> dist/*.pdf, dist/*.png  (needs Playwright + Chromium)
+```
+
+Copy lives in `templates/sheet.html` (shared by the web page and the artboard).
 
 ## Before sending
 
-1. **Office address.** `build.js` ships with a bracketed placeholder
-   (`[Office street address · Suite]` / `Miami, FL [ZIP]`). Set `ADDRESS_LINE_1`
-   and `ADDRESS_LINE_2`, then rebuild.
-2. **Terms.** If the deal changes, edit `PRINCIPAL`, `ANNUAL_RATE`, `TERM_MONTHS`
-   or `ISSUE_DATE_LABEL` in `build.js`. Every figure on the page is derived from
-   those constants (headline, key terms, chart, schedule, fine print).
-3. **Legal review.** The fine print states this is a discussion summary, not an
-   offer of securities, and that interest is generally taxable while return of
-   principal is not. Have counsel confirm the language matches the executed note.
-
-## Rebuild
-
-```bash
-node build.js        # -> dist/index.html, dist/schedule.csv
-node render.js       # -> dist/*.pdf, dist/*.png  (needs Playwright + Chromium)
-```
+The fine print states this is a discussion summary, not an offer of
+securities, and that interest is generally taxable while return of principal
+is not. Have counsel confirm the language matches the executed note.
 
 ## Assumptions baked into the numbers
 
@@ -41,7 +47,7 @@ node render.js       # -> dist/*.pdf, dist/*.png  (needs Playwright + Chromium)
 
 ## Assets
 
-- `assets/sugar-in-the-raw-gold.svg` — gold variant extracted from
+- `assets/sugar-in-the-raw-black.svg` — black variant extracted from
   `Final Sugar Logo (Original Concept).svg` in Drive → Sugar In The Raw LOGOS FINAL.
 - `assets/fonts-embedded.css` — Bodoni Moda + Libre Franklin (Google Fonts, OFL),
   latin subsets embedded as data URIs so the page renders identically offline.

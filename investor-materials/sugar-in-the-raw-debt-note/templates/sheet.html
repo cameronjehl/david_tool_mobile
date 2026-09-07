@@ -1,0 +1,57 @@
+<div class="sheet" style="width:816px;height:1056px;background:#FFFFFF;color:#141210;padding:56px;box-sizing:border-box;display:flex;flex-direction:column;gap:30px;font-family:'Libre Franklin','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:18px;border-bottom:1px solid #E6E1D8;">
+    {{LOGO}}
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+      <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Private debt note · Summary of terms</p>
+      <p style="margin:0;font-size:12px;color:#5C554B;">{{ISSUE_DATE}}</p>
+    </div>
+  </div>
+
+  <h1 style="margin:0;max-width:640px;font-family:'Bodoni Moda',Georgia,'Times New Roman',serif;font-weight:500;font-size:40px;line-height:1.08;letter-spacing:-.004em;color:#141210;text-wrap:balance;">Lend {{PRINCIPAL}}. Receive {{TOTAL_BACK}} over {{TERM}} months.</h1>
+
+  <div style="position:relative;display:flex;flex-direction:column;gap:10px;">
+    <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Value returned to investor · Principal plus interest paid to date</p>
+    {{CHART_SVG}}
+    {{TIP}}
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:16px;padding-top:22px;border-top:1px solid #E6E1D8;">
+    <div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:24px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Principal</p>
+        <p style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.01em;line-height:1;color:#141210;">{{PRINCIPAL}}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Annual return</p>
+        <p style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.01em;line-height:1;color:#141210;">{{RATE_PCT}}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Monthly payment</p>
+        <p style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.01em;line-height:1;color:#141210;">{{MONTHLY}}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <p style="margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;">Total interest</p>
+        <p style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.01em;line-height:1;color:#141210;">{{TOTAL_INTEREST}}</p>
+      </div>
+    </div>
+    <p style="margin:0;font-size:14px;line-height:1.5;color:#5C554B;">Interest is paid monthly for {{TERM}} months. The {{PRINCIPAL}} principal is returned in full at month {{TERM}}.</p>
+  </div>
+
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px;padding-top:18px;border-top:1px solid #E6E1D8;">
+    <div style="display:flex;justify-content:space-between;gap:24px;font-size:12px;line-height:1.5;color:#5C554B;">
+      <div style="display:flex;flex-direction:column;">
+        <p style="margin:0 0 3px;font-family:'Bodoni Moda',Georgia,'Times New Roman',serif;font-size:16px;line-height:1.1;color:#141210;">Sugar in the Raw</p>
+        <p style="margin:0;">SugarTime Inc.</p>
+        <p style="margin:0;">{{ADDRESS_LINE_1}}</p>
+        <p style="margin:0;">{{ADDRESS_LINE_2}}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;text-align:right;">
+        <p style="margin:0;color:#141210;">David Sugarman, Founder</p>
+        <p style="margin:0;">310-310-9440</p>
+        <p style="margin:0;">sugar@sugartimeinc.com</p>
+        <p style="margin:0;">sugartimeinc.com</p>
+      </div>
+    </div>
+    <p style="margin:0;font-size:10.5px;line-height:1.45;color:#8A8172;">For discussion purposes only; not an offer to sell, or a solicitation of an offer to buy, any security. Final terms are governed by the executed promissory note. Figures assume simple interest at {{RATE_PCT}} per year on {{PRINCIPAL}}, paid monthly over {{TERM}} months. Return of principal is a return of capital and not a taxable event; interest is generally taxable as ordinary income. Consult your tax advisor.</p>
+  </div>
+</div>
