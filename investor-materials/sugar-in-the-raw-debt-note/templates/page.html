@@ -10,16 +10,16 @@
 }
 :root[data-theme="dark"]{--plane:#161412;--plane-ink:#8A8172;--plane-line:#2A2622;--plane-strong:#E9E3D8;}
 *{box-sizing:border-box}
-body{margin:0;background:var(--plane);color:var(--plane-ink);font-family:'Libre Franklin','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--plane);color:var(--plane-ink);font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .plane{display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px 16px 56px}
 .stage{position:relative;width:calc(816px * var(--s));height:calc(1056px * var(--s))}
 .sheet-pos{position:absolute;top:0;left:0;transform:scale(var(--s));transform-origin:top left;box-shadow:0 20px 50px rgba(0,0,0,.18)}
-.chart:focus-visible{outline:2px solid #141210;outline-offset:4px}
-.tip{position:absolute;z-index:2;pointer-events:none;background:#FFFFFF;border:1px solid #E6E1D8;padding:9px 11px;font-size:11px;color:#5C554B;line-height:1.45;min-width:168px;box-shadow:0 10px 28px rgba(20,18,16,.14)}
-.tip b{display:block;color:#141210;font-weight:600;font-size:14px;margin:1px 0 3px}
-.tip .t-m{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8A8172}
+.chart:focus-visible{outline:2px solid #111111;outline-offset:4px}
+.tip{position:absolute;z-index:2;pointer-events:none;background:#FFFFFF;border:1px solid #D9D9D9;padding:9px 11px;font-size:12px;color:#444444;line-height:1.45;min-width:176px;box-shadow:0 10px 28px rgba(0,0,0,.12)}
+.tip b{display:block;color:#111111;font-weight:600;font-size:14px;margin:1px 0 3px}
+.tip .t-m{font-size:11px;color:#666666}
 .tip .t-row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
-.tip .t-row span:last-child{color:#141210}
+.tip .t-row span:last-child{color:#111111}
 .below{width:min(816px,100%);color:var(--plane-ink);font-size:13px;line-height:1.5}
 .below details{border-top:1px solid var(--plane-line);padding-top:14px}
 .below summary{cursor:pointer;font-weight:600;color:var(--plane-strong)}
@@ -53,7 +53,7 @@ body{margin:0;background:var(--plane);color:var(--plane-ink);font-family:'Libre 
       <summary>Full {{TERM}}-month payment schedule</summary>
       <div class="tbl">
         <table>
-          <thead><tr><th>Month</th><th>Payment</th><th>Interest to date</th><th>Principal outstanding</th><th>Value returned to date</th></tr></thead>
+          <thead><tr><th>Month</th><th>Payment</th><th>Interest to date</th><th>Principal outstanding</th><th>Total paid to date</th></tr></thead>
           <tbody>
 {{TABLE_ROWS}}
           </tbody>
@@ -95,18 +95,18 @@ body{margin:0;background:var(--plane);color:var(--plane-ink);font-family:'Libre 
   }
   function show(m) {
     var r = S[m]; current = m;
-    var x = xs(m), y = ys(r.value);
+    var x = xs(m), y = ys(r.interestToDate);
     cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.style.visibility = 'visible';
     hdot.setAttribute('cx', x); hdot.setAttribute('cy', y); hdot.style.visibility = 'visible';
     tip.replaceChildren();
     var h = document.createElement('div'); h.className = 't-m';
     h.textContent = m === 0 ? 'At funding' : 'Month ' + m + (m === 12 ? ' · end of year 1' : m === G.term ? ' · maturity' : '');
-    var v = document.createElement('b'); v.textContent = usd(r.value) + (m === 0 ? ' principal' : ' returned to date');
+    var v = document.createElement('b'); v.textContent = usd(r.interestToDate, true) + ' interest paid to date';
     tip.appendChild(h); tip.appendChild(v);
     if (m > 0) {
       tip.appendChild(row('Payment this month', usd(r.payment, true)));
       if (r.principalReturned) tip.appendChild(row('Principal returned', usd(r.principalReturned)));
-      tip.appendChild(row('Interest to date', usd(r.interestToDate, true)));
+      tip.appendChild(row('Total paid to date', usd(r.paidToDate, true)));
     } else {
       tip.appendChild(row('First payment', 'end of month 1'));
     }
