@@ -1,33 +1,40 @@
 #!/usr/bin/env node
 /**
- * Renders dist/index.html to a US-Letter PDF and a 2x PNG of the sheet.
+ * Renders each dist/<slug>/index.html to a US-Letter PDF and a 2x PNG of the sheet.
  * Requires Playwright with Chromium (npm i -D playwright && npx playwright install chromium).
  *
  *   node render.js
  */
+const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 
 (async () => {
-  const dist = path.join(__dirname, 'dist');
-  const url = 'file://' + path.join(dist, 'index.html');
+  const distRoot = path.join(__dirname, 'dist');
+  const slugs = JSON.parse(fs.readFileSync(path.join(distRoot, 'variants.json'), 'utf8'));
   const browser = await chromium.launch();
 
-  // PNG: the sheet at 2x
-  const page = await browser.newPage({ viewport: { width: 1000, height: 1200 }, deviceScaleFactor: 2 });
-  await page.goto(url, { waitUntil: 'load' });
-  await page.evaluate(() => document.fonts.ready);
-  const sheet = await page.$('.sheet');
-  await sheet.screenshot({ path: path.join(dist, 'sugar-in-the-raw-debt-note.png') });
+  for (const slug of slugs) {
+    const dist = path.join(distRoot, slug);
+    const base = `sugar-in-the-raw-debt-note-${slug}`;
+    const page = await browser.newPage({ viewport: { width: 1000, height: 1200 }, deviceScaleFactor: 2 });
+    await page.goto('file://' + path.join(dist, 'index.html'), { waitUntil: 'load' });
+    await page.evaluate(() => document.fonts.ready);
 
-  // PDF: one Letter page, no margins
-  await page.emulateMedia({ media: 'print' });
-  await page.pdf({
-    path: path.join(dist, 'sugar-in-the-raw-debt-note.pdf'),
-    width: '8.5in', height: '11in', printBackground: true, pageRanges: '1',
-    preferCSSPageSize: false,
-  });
+    // PNG: the sheet at 2x
+    const sheet = await page.$('.sheet');
+    await sheet.screenshot({ path: path.join(dist, `${base}.png`) });
+
+    // PDF: one Letter page, no margins
+    await page.emulateMedia({ media: 'print' });
+    await page.pdf({
+      path: path.join(dist, `${base}.pdf`),
+      width: '8.5in', height: '11in', printBackground: true, pageRanges: '1',
+      preferCSSPageSize: false,
+    });
+    await page.close();
+    console.log(`wrote dist/${slug}/${base}.png and .pdf`);
+  }
 
   await browser.close();
-  console.log('wrote dist/sugar-in-the-raw-debt-note.png and .pdf');
 })().catch(e => { console.error(e); process.exit(1); });
