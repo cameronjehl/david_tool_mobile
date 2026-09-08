@@ -1,0 +1,140 @@
+<title>Sugar in the Raw Debt Note</title>
+<style>
+{{FONTS_CSS}}
+:root{
+  --plane:#ECE8E1; --plane-ink:#6B6256; --plane-line:#D6CEC1; --plane-strong:#2B2622;
+  --s:1;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--plane:#161412;--plane-ink:#8A8172;--plane-line:#2A2622;--plane-strong:#E9E3D8;}
+}
+:root[data-theme="dark"]{--plane:#161412;--plane-ink:#8A8172;--plane-line:#2A2622;--plane-strong:#E9E3D8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--plane-ink);font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.plane{display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px 16px 56px}
+.stage{position:relative;width:calc(816px * var(--s));height:calc(1056px * var(--s))}
+.sheet-pos{position:absolute;top:0;left:0;transform:scale(var(--s));transform-origin:top left;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.chart:focus-visible{outline:2px solid #111111;outline-offset:4px}
+.tip{position:absolute;z-index:2;pointer-events:none;background:#FFFFFF;border:1px solid #D9D9D9;padding:9px 11px;font-size:12px;color:#444444;line-height:1.45;min-width:176px;box-shadow:0 10px 28px rgba(0,0,0,.12)}
+.tip b{display:block;color:#111111;font-weight:600;font-size:14px;margin:1px 0 3px}
+.tip .t-m{font-size:11px;color:#666666}
+.tip .t-row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.tip .t-row span:last-child{color:#111111}
+.below{width:min(816px,100%);color:var(--plane-ink);font-size:13px;line-height:1.5}
+.below details{border-top:1px solid var(--plane-line);padding-top:14px}
+.below summary{cursor:pointer;font-weight:600;color:var(--plane-strong)}
+.below summary:focus-visible{outline:2px solid var(--plane-strong);outline-offset:3px}
+.below .tbl{overflow-x:auto;margin-top:12px}
+.below table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:12.5px;min-width:560px}
+.below th,.below td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--plane-line);white-space:nowrap}
+.below th{font-weight:600;color:var(--plane-strong);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.below th:first-child,.below td:first-child{text-align:left}
+.below tr.milestone td{color:var(--plane-strong);font-weight:600}
+.below .note{margin:10px 0 0;font-size:12px}
+@page{size:8.5in 11in;margin:0}
+@media print{
+  body{background:#FFFFFF}
+  .plane{padding:0;gap:0}
+  .stage{width:816px;height:1056px}
+  .sheet-pos{transform:none;box-shadow:none}
+  .below,.tip{display:none}
+}
+</style>
+
+<div class="plane">
+  <div class="stage">
+    <div class="sheet-pos">
+{{SHEET}}
+    </div>
+  </div>
+
+  <div class="below">
+    <details>
+      <summary>Full {{TERM}}-month payment schedule</summary>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Month</th><th>Payment</th><th>Interest to date</th><th>Principal outstanding</th><th>Total paid to date</th></tr></thead>
+          <tbody>
+{{TABLE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Month {{TERM}} includes the final interest payment and the {{PRINCIPAL}} balloon repayment of principal.</p>
+    </details>
+  </div>
+</div>
+
+<script>
+(function () {
+  var S = {{SCHEDULE_JSON}};
+  var G = {{GEOM_JSON}};
+  var stage = document.querySelector('.stage');
+  function fit() {
+    var s = Math.min(1, (document.documentElement.clientWidth - 32) / 816);
+    stage.style.setProperty('--s', s.toFixed(4));
+  }
+  fit();
+  window.addEventListener('resize', fit);
+
+  var svg = document.querySelector('.chart');
+  var wrap = svg.parentNode;
+  var tip = document.querySelector('.tip');
+  var cross = svg.querySelector('.cross');
+  var hdot = svg.querySelector('.hdot');
+  var current = -1;
+  function xs(m) { return G.x0 + (m / G.term) * G.pw; }
+  function ys(v) { return G.y1 - ((v - G.yMin) / (G.yMax - G.yMin)) * G.ph; }
+  function usd(n, cents) {
+    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: cents ? 2 : 0 });
+  }
+  function row(label, value) {
+    var d = document.createElement('div'); d.className = 't-row';
+    var a = document.createElement('span'); a.textContent = label;
+    var b = document.createElement('span'); b.textContent = value;
+    d.appendChild(a); d.appendChild(b); return d;
+  }
+  function show(m) {
+    var r = S[m]; current = m;
+    var x = xs(m), y = ys(r.interestToDate);
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.style.visibility = 'visible';
+    hdot.setAttribute('cx', x); hdot.setAttribute('cy', y); hdot.style.visibility = 'visible';
+    tip.replaceChildren();
+    var h = document.createElement('div'); h.className = 't-m';
+    h.textContent = m === 0 ? 'At funding' : 'Month ' + m + (m === 12 ? ' · end of year 1' : m === G.term ? ' · maturity' : '');
+    var v = document.createElement('b'); v.textContent = usd(r.interestToDate, true) + ' interest paid to date';
+    tip.appendChild(h); tip.appendChild(v);
+    if (m > 0) {
+      tip.appendChild(row('Payment this month', usd(r.payment, true)));
+      if (r.principalReturned) tip.appendChild(row('Principal returned', usd(r.principalReturned)));
+      tip.appendChild(row('Total paid to date', usd(r.paidToDate, true)));
+    } else {
+      tip.appendChild(row('First payment', 'end of month 1'));
+    }
+    tip.hidden = false;
+    var rect = svg.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
+    var k = rect.width / G.W;
+    var px = (rect.left - wr.left) + x * k, py = (rect.top - wr.top) + y * k;
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var left = px + 14; if (left + tw > wr.width - 4) left = px - tw - 14;
+    var top = Math.max(0, Math.min(py - th / 2, wr.height - th));
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+  }
+  function hide() { current = -1; cross.style.visibility = 'hidden'; hdot.style.visibility = 'hidden'; tip.hidden = true; }
+  svg.addEventListener('pointermove', function (e) {
+    var rect = svg.getBoundingClientRect();
+    var vx = (e.clientX - rect.left) * G.W / rect.width;
+    var m = Math.round((vx - G.x0) / G.pw * G.term);
+    show(Math.max(0, Math.min(G.term, m)));
+  });
+  svg.addEventListener('pointerleave', hide);
+  svg.addEventListener('focus', function () { show(12); });
+  svg.addEventListener('blur', hide);
+  svg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); show(Math.min(G.term, (current < 0 ? 12 : current) + 1)); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); show(Math.max(0, (current < 0 ? 12 : current) - 1)); }
+    else if (e.key === 'Home') { e.preventDefault(); show(0); }
+    else if (e.key === 'End') { e.preventDefault(); show(G.term); }
+    else if (e.key === 'Escape') { hide(); }
+  });
+})();
+</script>
