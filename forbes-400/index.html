@@ -1,0 +1,766 @@
+<title>Forbes 400 by Field</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f2f3f5;
+    --surface: #fbfbfa;
+    --ink: #141a24;
+    --ink-2: #525b6a;
+    --ink-3: #7d8694;
+    --grid: #e3e6ea;
+    --axis: #c9cdd4;
+    --border: rgba(20, 26, 36, 0.10);
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --connector: #c9cdd4;
+    --tip-bg: #141a24;
+    --tip-ink: #f3f4f6;
+    --tip-ink-2: #b5bcc7;
+    --control-bg: #e6e8ec;
+    --control-on: #141a24;
+    --control-on-ink: #f6f7f9;
+    --tag-bg: #e6e8ec;
+    --tag-ink: #525b6a;
+    --focus: #2a78d6;
+    --font-display: "Bricolage Grotesque", "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0f1216;
+      --surface: #16191d;
+      --ink: #f3f4f6;
+      --ink-2: #b5bcc7;
+      --ink-3: #858d99;
+      --grid: #272c34;
+      --axis: #3a404a;
+      --border: rgba(255, 255, 255, 0.10);
+      --series-1: #3987e5;
+      --series-2: #d95926;
+      --connector: #3a404a;
+      --tip-bg: #f3f4f6;
+      --tip-ink: #141a24;
+      --tip-ink-2: #525b6a;
+      --control-bg: #22272e;
+      --control-on: #f3f4f6;
+      --control-on-ink: #141a24;
+      --tag-bg: #22272e;
+      --tag-ink: #b5bcc7;
+      --focus: #3987e5;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f1216;
+    --surface: #16191d;
+    --ink: #f3f4f6;
+    --ink-2: #b5bcc7;
+    --ink-3: #858d99;
+    --grid: #272c34;
+    --axis: #3a404a;
+    --border: rgba(255, 255, 255, 0.10);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --connector: #3a404a;
+    --tip-bg: #f3f4f6;
+    --tip-ink: #141a24;
+    --tip-ink-2: #525b6a;
+    --control-bg: #22272e;
+    --control-on: #f3f4f6;
+    --control-on-ink: #141a24;
+    --tag-bg: #22272e;
+    --tag-ink: #b5bcc7;
+    --focus: #3987e5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 36px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  @media (max-width: 480px) {
+    .wrap { padding-inline: 16px; padding-block: 24px 40px; gap: 28px; }
+  }
+
+  /* Masthead */
+  .masthead { display: flex; flex-direction: column; gap: 14px; }
+  .eyebrow {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  h1 {
+    margin: 0;
+    max-width: 18ch;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.6vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+  }
+  .dek { margin: 0; font-size: 17px; line-height: 1.5; color: var(--ink-2); max-width: 62ch; }
+  .dek strong { color: var(--ink); font-weight: 600; }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px 24px;
+    margin: 8px 0 0;
+    padding: 0;
+    max-width: 760px;
+  }
+  .facts div { border-top: 1px solid var(--axis); padding-top: 8px; }
+  .facts dt { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+  .facts dd {
+    margin: 2px 0 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  /* Page-level lens control */
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+  .controls-label { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+  .seg { display: inline-flex; flex-wrap: wrap; max-width: 100%; padding: 3px; border-radius: 9px; background: var(--control-bg); gap: 2px; }
+  .seg button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--ink-2);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 6px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .seg button[aria-pressed="true"] { background: var(--control-on); color: var(--control-on-ink); font-weight: 600; }
+  .seg button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .controls-note { flex-basis: 100%; margin: 0; font-size: 13.5px; color: var(--ink-2); max-width: 78ch; }
+  .controls-note code {
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+  }
+
+  /* Chart cards */
+  .chart {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  @media (max-width: 480px) { .chart { padding: 16px 14px 12px; border-radius: 10px; } }
+  .chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 8px 16px; }
+  .chart-head h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+  .chart-head .sub { margin: 4px 0 0; font-size: 14px; color: var(--ink-2); max-width: 60ch; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend svg { display: block; }
+  .chart-body { position: relative; }
+  .chart-body svg { display: block; width: 100%; height: auto; font-family: var(--font-body); overflow: visible; }
+  .chart-foot { margin: 0; font-size: 13px; color: var(--ink-3); }
+
+  /* SVG marks */
+  .grid line { stroke: var(--grid); stroke-width: 1; }
+  .grid line.baseline { stroke: var(--axis); }
+  .axis text { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .lbl { fill: var(--ink); font-size: 13px; font-weight: 500; }
+  .val { fill: var(--ink); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tag rect { fill: var(--tag-bg); }
+  .tag text { fill: var(--tag-ink); font-size: 9.5px; font-weight: 600; letter-spacing: .06em; }
+  .bar { fill: var(--series-1); }
+  .row { outline: none; }
+  .row .hit { fill: transparent; stroke: none; }
+  .row:hover .bar, .row:focus-visible .bar { filter: brightness(1.12); }
+  .row:hover .mk, .row:focus-visible .mk { filter: brightness(1.12); }
+  .row:focus-visible .hit { stroke: var(--focus); stroke-width: 2; }
+  .conn { stroke: var(--connector); stroke-width: 2; stroke-linecap: round; }
+  .ring { fill: var(--surface); }
+  .mk-1 { fill: var(--series-1); }
+  .mk-2 { fill: var(--series-2); }
+
+  /* Tooltip */
+  .tip {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    background: var(--tip-bg);
+    color: var(--tip-ink);
+    border-radius: 8px;
+    padding: 9px 11px 10px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    min-width: 210px;
+    max-width: 290px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+  }
+  .tip .t-name { color: var(--tip-ink-2); font-weight: 500; margin-bottom: 3px; }
+  .tip .t-val { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.25; }
+  .tip .t-sub { color: var(--tip-ink-2); }
+  .tip .t-row { display: flex; align-items: baseline; gap: 8px; margin-top: 2px; }
+  .tip .t-key { display: inline-block; width: 12px; height: 3px; border-radius: 2px; flex: none; position: relative; top: -3px; }
+  .tip .t-row strong { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tip .t-gap { margin-top: 5px; }
+
+  /* Table twins */
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  th { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.muted { color: var(--ink-2); }
+  tbody tr:hover { background: var(--control-bg); }
+  tfoot td { font-weight: 600; border-bottom: 0; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* Notes and footer */
+  .notes { max-width: 72ch; display: flex; flex-direction: column; gap: 10px; }
+  .notes h2 { margin: 0; font-family: var(--font-display); font-size: 19px; font-weight: 600; }
+  .notes p, .notes li { font-size: 14.5px; color: var(--ink-2); }
+  .notes p { margin: 0; }
+  .notes ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .notes strong { color: var(--ink); font-weight: 600; }
+  footer { font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--axis); padding-top: 14px; }
+  footer a { color: inherit; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .seg button { transition: background-color .15s, color .15s; }
+  }
+  @media print {
+    .chart { break-inside: avoid; }
+  }
+</style>
+
+<div class="wrap" data-list-year="2026">
+  <header class="masthead">
+    <p class="eyebrow">The Forbes 400 · 2026 edition</p>
+    <h1>Where America's 400 richest made their money</h1>
+    <p class="dek" id="dek">Share of the 2026 list by field. <strong>Finance &amp; Investments</strong> seats the most members at 27.0%, and <strong>Technology</strong> is second at 22.0%. But technology fortunes run far larger: that 22% of the people holds 48.4% of the list's combined $8.04 trillion.</p>
+    <dl class="facts">
+      <div><dt>Members</dt><dd id="fact-members">400</dd></div>
+      <div><dt>Combined net worth</dt><dd id="fact-total">$8.04T</dd></div>
+      <div><dt>Needed to qualify</dt><dd id="fact-cutoff">$4.4B</dd></div>
+      <div><dt>Forbes categories</dt><dd id="fact-cats">17</dd></div>
+    </dl>
+  </header>
+
+  <div class="controls" role="group" aria-label="Field grouping">
+    <span class="controls-label" id="lens-label">Group by</span>
+    <div class="seg" role="group" aria-labelledby="lens-label">
+      <button type="button" id="lens-detail" aria-pressed="true">Finance sub-fields</button>
+      <button type="button" id="lens-forbes" aria-pressed="false">Forbes' 17 categories</button>
+    </div>
+    <p class="controls-note" id="lens-note">Forbes files all 108 financiers under one category. This view splits them by the vehicle behind the fortune: private equity, hedge funds, venture capital and so on. Rows tagged <code>FIN</code> are those sub-fields; together they still add up to 27.0% of the list.</p>
+  </div>
+
+  <figure class="chart" id="fig-share">
+    <figcaption class="chart-head">
+      <div>
+        <h2>Share of the list by field</h2>
+        <p class="sub">Percent of the 400 members whose fortune comes from each field, largest first.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Share chart view">
+        <button type="button" id="share-view-chart" aria-pressed="true">Chart</button>
+        <button type="button" id="share-view-table" aria-pressed="false">Table</button>
+      </div>
+    </figcaption>
+    <div class="chart-body" id="share-chart"></div>
+    <div class="table-wrap" id="share-table" hidden></div>
+    <p class="chart-foot" id="share-foot">Bars sum to 100%. Hover or tab to a row for member counts, combined net worth and the highest-ranked names.</p>
+  </figure>
+
+  <figure class="chart" id="fig-wealth">
+    <figcaption class="chart-head">
+      <div>
+        <h2>Headcount versus wealth</h2>
+        <p class="sub">Percent of members next to percent of the list's combined net worth. Wealth sitting to the right of headcount means the field's fortunes run larger than the list average.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Wealth chart view">
+        <button type="button" id="wealth-view-chart" aria-pressed="true">Chart</button>
+        <button type="button" id="wealth-view-table" aria-pressed="false">Table</button>
+      </div>
+    </figcaption>
+    <div class="legend" aria-label="Legend">
+      <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5" class="mk-1"></circle></svg>Share of members</span>
+      <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" rx="1.5" transform="rotate(45 7 7)" class="mk-2"></rect></svg>Share of combined net worth</span>
+    </div>
+    <div class="chart-body" id="wealth-chart"></div>
+    <div class="table-wrap" id="wealth-table" hidden></div>
+    <p class="chart-foot" id="wealth-foot">Both series sum to 100%. The two widest gaps are labeled; every other value is in the tooltip and the table.</p>
+  </figure>
+
+  <section class="notes" aria-labelledby="notes-h">
+    <h2 id="notes-h">How to read this</h2>
+    <ul>
+      <li><strong>Source.</strong> Forbes' 2026 Forbes 400 list, retrieved from Forbes' list API on 15 September 2026. Net worths are Forbes' figures as of the list's publication.</li>
+      <li><strong>Fields.</strong> The 17 industry categories are Forbes' own, one per member. Percentages are simple head counts out of 400.</li>
+      <li><strong>Finance sub-fields.</strong> Forbes puts every financier in one category. The split into private equity, hedge funds, trading, asset management, venture capital, banking, financial data, crypto and holding companies was assigned by hand from each member's primary vehicle. "Private equity &amp; buyouts" is where the deal-making and M&amp;A fortunes sit: KKR, Blackstone, Apollo, Carlyle, TPG, Thoma Bravo, Vista, Clearlake, H.I.G. and their peers.</li>
+      <li><strong>Wealth share.</strong> A field's combined net worth divided by the list's total. Technology's share is dominated by a handful of fortunes at the top of the list, so read it as concentration, not a typical outcome.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Source: Forbes, <a href="https://www.forbes.com/forbes-400/" rel="noopener">The Forbes 400</a>, 2026 edition. Field split and charts built from the published list; the classification map and build script live alongside this page.
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // rank, name, net worth ($M), Forbes category, field, source of wealth
+  var ROSTER_RAW = /*ROSTER:START*/[[1,"Elon Musk",908000.0,"Technology","Technology","Tesla, SpaceX"],[2,"Jeff Bezos",378000.0,"Technology","Technology","Amazon"],[3,"Larry Page",278000.0,"Technology","Technology","Google"],[4,"Michael Dell",263000.0,"Technology","Technology","Dell Technologies"],[5,"Sergey Brin",256000.0,"Technology","Technology","Google"],[6,"Mark Zuckerberg",212000.0,"Technology","Technology","Facebook"],[7,"Larry Ellison",204000.0,"Technology","Technology","Oracle"],[8,"Jensen Huang",199000.0,"Technology","Technology","Semiconductors"],[9,"Steve Ballmer",156000.0,"Technology","Technology","Microsoft"],[10,"Warren Buffett",144000.0,"Finance & Investments","Holding companies & investors","Berkshire Hathaway"],[11,"Rob Walton & family",132000.0,"Fashion & Retail","Fashion & Retail","Walmart"],[12,"Jim Walton & family",128000.0,"Fashion & Retail","Fashion & Retail","Walmart"],[13,"Alice Walton",118000.0,"Fashion & Retail","Fashion & Retail","Walmart"],[14,"Bill Gates",116000.0,"Technology","Technology","Microsoft"],[15,"Thomas Peterffy",107000.0,"Finance & Investments","Trading & brokerage","Discount brokerage"],[16,"Michael Bloomberg",94900.0,"Finance & Investments","Financial data & research","Bloomberg LP"],[17,"Julia Koch & family",84600.0,"Diversified","Diversified","Koch, Inc."],[18,"Jeff Yass",77800.0,"Finance & Investments","Trading & brokerage","Trading, investments"],[19,"Charles Koch & family",76900.0,"Diversified","Diversified","Koch, Inc."],[20,"Ken Griffin",60500.0,"Finance & Investments","Hedge funds","Hedge funds"],[21,"Jacqueline Mars",50300.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[21,"John Mars",50300.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[23,"Stephen Schwarzman",46400.0,"Finance & Investments","Private equity & buyouts","Investments"],[24,"Lukas Walton",44400.0,"Fashion & Retail","Fashion & Retail","Walmart"],[25,"Abigail Johnson",41600.0,"Finance & Investments","Asset & wealth management","Fidelity"],[26,"Eric Schmidt",37800.0,"Technology","Technology","Google"],[27,"Marilyn Simons & family",36600.0,"Finance & Investments","Hedge funds","Hedge funds"],[28,"Peter Thiel",35400.0,"Finance & Investments","Venture capital","Facebook, investments"],[29,"Len Blavatnik",35200.0,"Diversified","Diversified","Music, chemicals"],[30,"Melinda French Gates",34600.0,"Technology","Technology","Microsoft"],[31,"Henry Samueli",33800.0,"Technology","Technology","Semiconductors"],[32,"Thomas Frist, Jr. & family",33600.0,"Healthcare","Healthcare","Hospitals"],[33,"Miriam Adelson & family",33500.0,"Gambling & Casinos","Gambling & Casinos","Casinos"],[34,"David Sun",32200.0,"Technology","Technology","Computer hardware"],[34,"Elaine Marshall & family",32200.0,"Diversified","Diversified","Koch Inc."],[34,"John Tu",32200.0,"Technology","Technology","Computer hardware"],[37,"Lyndal Stephens Greth & family",30000.0,"Energy","Energy","Oil & gas"],[38,"Robert Pera",29600.0,"Technology","Technology","Wireless networking"],[39,"David Tepper",28500.0,"Finance & Investments","Hedge funds","Hedge funds"],[40,"MacKenzie Scott",27900.0,"Technology","Technology","Amazon"],[41,"Israel Englander",27600.0,"Finance & Investments","Hedge funds","Hedge funds"],[41,"Stanley Kroenke",27600.0,"Sports","Sports","Sports, real estate"],[43,"Steve Cohen",26700.0,"Finance & Investments","Hedge funds","Hedge funds"],[44,"Phil Knight & family",25800.0,"Fashion & Retail","Fashion & Retail","Nike"],[45,"Greg Brockman",25500.0,"Technology","Technology","OpenAI"],[46,"Rupert Murdoch & family",25000.0,"Media & Entertainment","Media & Entertainment","Newspapers, TV network"],[47,"Ernest Garcia, II.",24300.0,"Automotive","Automotive","Used cars"],[48,"Diane Hendricks",23600.0,"Construction & Engineering","Construction & Engineering","Building supplies"],[49,"Jerry Jones & family",23500.0,"Sports","Sports","Dallas Cowboys"],[50,"Brett Adcock",23400.0,"Technology","Technology","Robots"],[51,"Daniel Gilbert",22900.0,"Finance & Investments","Banking, lending & insurance","Rocket Mortgage"],[52,"John Doerr",22800.0,"Finance & Investments","Venture capital","Venture capital"],[53,"Christy Walton",22000.0,"Fashion & Retail","Fashion & Retail","Walmart"],[54,"Rick Cohen & family",21900.0,"Technology","Technology","Warehouse automation"],[55,"Henry Nicholas, III.",21800.0,"Technology","Technology","Semiconductors"],[56,"Stephen Ross",21500.0,"Real Estate","Real Estate","Real estate"],[57,"Todd Graves",20000.0,"Food & Beverage","Food & Beverage","Fast food"],[58,"Donald Bren",19800.0,"Real Estate","Real Estate","Real estate"],[59,"Arthur Dantchik",19500.0,"Finance & Investments","Trading & brokerage","Trading, investments"],[60,"Philip Anschutz",19300.0,"Finance & Investments","Holding companies & investors","Energy, sports, entertainment"],[61,"Harold Hamm & family",19000.0,"Energy","Energy","Oil & gas"],[62,"Ray Dalio",18900.0,"Finance & Investments","Hedge funds","Hedge funds"],[63,"Alexander Karp",18800.0,"Technology","Technology","Software firm"],[64,"Jan Koum",18500.0,"Technology","Technology","WhatsApp"],[65,"Edwin Chen",18000.0,"Technology","Technology","Artificial intelligence"],[66,"Eric Smidt",17800.0,"Fashion & Retail","Fashion & Retail","Hardware stores"],[67,"Nancy Walton Laurie",17200.0,"Fashion & Retail","Fashion & Retail","Walmart"],[68,"Antonio Gracias",17100.0,"Finance & Investments","Private equity & buyouts","Investments"],[69,"Josh Kushner",16700.0,"Finance & Investments","Venture capital","Venture capital"],[70,"George Kaiser",16500.0,"Energy","Energy","Oil & gas, banking"],[70,"Peter Mallouk",16500.0,"Finance & Investments","Asset & wealth management","Wealth planning"],[70,"Shahid Khan",16500.0,"Automotive","Automotive","Sports teams, auto parts"],[73,"Edward Johnson, IV.",16300.0,"Finance & Investments","Asset & wealth management","Fidelity"],[74,"John Menard, Jr.",16000.0,"Fashion & Retail","Fashion & Retail","Home improvement stores"],[75,"Daniela Amodei",15500.0,"Technology","Technology","Artificial intelligence"],[75,"Dario Amodei",15500.0,"Technology","Technology","Artifical intelligence"],[75,"Jack Clark",15500.0,"Technology","Technology","Artificial intelligence"],[75,"Jared Kaplan",15500.0,"Technology","Technology","Artificial intelligence"],[75,"Sam McCandlish",15500.0,"Technology","Technology","Artificial intelligence"],[75,"Tom Brown",15500.0,"Technology","Technology","Artificial intelligence"],[81,"Robert Kraft",15200.0,"Sports","Sports","Manufacturing, New England Patriots"],[82,"Laurene Powell Jobs",15100.0,"Technology","Technology","Apple, Disney"],[83,"George Roberts",15000.0,"Finance & Investments","Private equity & buyouts","Private equity"],[83,"Ken Fisher",15000.0,"Finance & Investments","Asset & wealth management","Money management"],[83,"Leon Black",15000.0,"Finance & Investments","Private equity & buyouts","Private equity"],[86,"Charles Schwab",14900.0,"Finance & Investments","Trading & brokerage","Discount brokerage"],[87,"Ralph Lauren & family",14800.0,"Fashion & Retail","Fashion & Retail","Apparel"],[88,"Jeffery Hildebrand",14700.0,"Energy","Energy","Oil & gas"],[89,"Elizabeth Johnson",14400.0,"Finance & Investments","Asset & wealth management","Fidelity"],[90,"J. Christopher Reyes",14300.0,"Food & Beverage","Food & Beverage","Food distribution"],[90,"Jude Reyes",14300.0,"Food & Beverage","Food & Beverage","Food distribution"],[90,"Michael Sabel",14300.0,"Energy","Energy","oil & gas"],[90,"Robert Pender",14300.0,"Energy","Energy","oil & gas"],[94,"Ann Walton Kroenke",14000.0,"Fashion & Retail","Fashion & Retail","Walmart"],[95,"Henry Kravis",13500.0,"Finance & Investments","Private equity & buyouts","Private equity"],[96,"Pierre Omidyar",13400.0,"Technology","Technology","EBay, PayPal"],[96,"Robert Duggan",13400.0,"Healthcare","Healthcare","Pharmaceuticals"],[98,"Brad Jacobs",13300.0,"Logistics","Logistics","Logistics"],[99,"Arthur Blank",13200.0,"Sports","Sports","Home Depot"],[100,"Richard Kinder",12900.0,"Energy","Energy","Pipelines"],[101,"Charles Ergen",12800.0,"Media & Entertainment","Media & Entertainment","Satellite TV"],[102,"Dan Friedkin",12700.0,"Automotive","Automotive","Toyota dealerships"],[103,"Brian Chesky",12600.0,"Technology","Technology","Airbnb"],[103,"Marijke Mars",12600.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[103,"Pamela Mars",12600.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[103,"Tilman Fertitta",12600.0,"Food & Beverage","Food & Beverage","Entertainment, Houston Rockets"],[103,"Valerie Mars",12600.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[103,"Victoria Mars",12600.0,"Food & Beverage","Food & Beverage","Candy, pet food"],[109,"Josh Harris",12400.0,"Finance & Investments","Private equity & buyouts","Private equity"],[110,"Andrew Beal",12300.0,"Finance & Investments","Banking, lending & insurance","Banks, real estate"],[110,"David Steward",12300.0,"Technology","Technology","IT provider"],[110,"George Kurtz",12300.0,"Technology","Technology","Security software"],[110,"John Paulson",12300.0,"Finance & Investments","Hedge funds","Hedge funds"],[114,"Douglas Leone",12200.0,"Finance & Investments","Venture capital","Venture capital"],[114,"Jimmy Haslam",12200.0,"Fashion & Retail","Fashion & Retail","Gas stations, retail"],[116,"Bubba Cathy",12000.0,"Food & Beverage","Food & Beverage","Chick-fil-A"],[116,"Dan Cathy",12000.0,"Food & Beverage","Food & Beverage","Chick-fil-A"],[116,"Trudy Cathy White",12000.0,"Food & Beverage","Food & Beverage","Chick-fil-A"],[119,"Nathan Blecharczyk",11900.0,"Technology","Technology","Airbnb"],[120,"Antony Ressler",11800.0,"Finance & Investments","Private equity & buyouts","Finance"],[120,"Mark Stevens",11800.0,"Finance & Investments","Venture capital","Venture capital"],[120,"Roger Penske",11800.0,"Automotive","Automotive","Cars"],[120,"Terrence Pegula",11800.0,"Energy","Energy","Natural gas"],[124,"Adam Foroughi",11700.0,"Technology","Technology","advertising technology"],[124,"Michael Dorrell",11700.0,"Finance & Investments","Private equity & buyouts","Investing"],[124,"Michael Rubin",11700.0,"Fashion & Retail","Fashion & Retail","Online retail"],[124,"Randa Duncan Williams",11700.0,"Energy","Energy","Pipelines"],[128,"Dannine Avara",11600.0,"Energy","Energy","Pipelines"],[128,"Milane Frantz",11600.0,"Energy","Energy","Pipelines"],[128,"Orlando Bravo",11600.0,"Finance & Investments","Private equity & buyouts","Private equity"],[128,"Ramzi Musallam",11600.0,"Finance & Investments","Private equity & buyouts","Private equity"],[132,"David Duffield",11500.0,"Technology","Technology","Business software"],[132,"Micky Arison & family",11500.0,"Service","Service","Carnival Cruises"],[134,"Ernest Garcia III",11400.0,"Automotive","Automotive","Used cars"],[134,"John Malone",11400.0,"Media & Entertainment","Media & Entertainment","Cable television"],[134,"Vinod Khosla",11400.0,"Technology","Technology","Sun Microsystems, venture capital"],[137,"Charles Butt",11300.0,"Fashion & Retail","Fashion & Retail","Supermarkets"],[137,"Scott Duncan",11300.0,"Energy","Energy","Pipelines"],[139,"Gayle Benson",11200.0,"Sports","Sports","New Orleans Saints"],[139,"James Goodnight",11200.0,"Technology","Technology","Software"],[141,"Charlie Mills",11000.0,"Healthcare","Healthcare","Medical supplies"],[142,"Robert F. Smith",10900.0,"Finance & Investments","Private equity & buyouts","Private equity"],[142,"William Ackman",10900.0,"Finance & Investments","Hedge funds","Hedge funds"],[144,"David Shaw",10800.0,"Finance & Investments","Hedge funds","Hedge funds"],[144,"Ron Baron",10800.0,"Finance & Investments","Asset & wealth management","Money management"],[146,"Stephen Bisciotti",10700.0,"Sports","Sports","Staffing, Baltimore Ravens"],[147,"Ken Xie & family",10600.0,"Technology","Technology","Cybersecurity"],[147,"Tom Gores",10600.0,"Finance & Investments","Private equity & buyouts","Private equity"],[149,"Don Hankey",10500.0,"Finance & Investments","Banking, lending & insurance","Auto loans"],[150,"Bruce Kovner",10400.0,"Finance & Investments","Hedge funds","Hedge funds"],[151,"Ken Langone",10300.0,"Finance & Investments","Holding companies & investors","Investments"],[151,"Patrick Soon-Shiong",10300.0,"Healthcare","Healthcare","Pharmaceuticals"],[153,"Elisabeth DeLuca & family",10200.0,"Food & Beverage","Food & Beverage","Subway"],[153,"Gabe Newell",10200.0,"Media & Entertainment","Media & Entertainment","Video games"],[153,"Harry Stine & family",10200.0,"Food & Beverage","Food & Beverage","Agriculture"],[156,"Jeff Greene",10100.0,"Real Estate","Real Estate","Real estate, investments"],[156,"Li Ge",10100.0,"Healthcare","Healthcare","Pharmaceuticals"],[158,"Denise York & family",10000.0,"Sports","Sports","San Francisco 49ers"],[159,"Neil Bluhm",9900.0,"Real Estate","Real Estate","Real estate"],[160,"David Geffen",9700.0,"Media & Entertainment","Media & Entertainment","Movies, record labels"],[160,"Jay Chaudhry",9700.0,"Technology","Technology","Security software"],[160,"Joe Gebbia",9700.0,"Technology","Technology","Airbnb"],[160,"Marc Benioff",9700.0,"Technology","Technology","Business software"],[164,"Judy Faulkner",9600.0,"Technology","Technology","Healthcare software"],[165,"Jonathan Gray",9500.0,"Finance & Investments","Private equity & buyouts","Investments"],[165,"Philippe Laffont",9500.0,"Finance & Investments","Hedge funds","Hedge fund"],[167,"Jack Dangermond",9400.0,"Technology","Technology","Mapping software"],[167,"Lin Bin",9400.0,"Technology","Technology","Smartphones"],[167,"Patrick Ryan",9400.0,"Finance & Investments","Banking, lending & insurance","Insurance"],[170,"David Siegel",9300.0,"Finance & Investments","Hedge funds","Hedge funds"],[170,"J. Joe Ricketts & family",9300.0,"Finance & Investments","Trading & brokerage","TD Ameritrade"],[170,"John Overdeck",9300.0,"Finance & Investments","Hedge funds","Hedge funds"],[170,"Kelcy Warren",9300.0,"Energy","Energy","Pipelines"],[170,"Les Wexner & family",9300.0,"Fashion & Retail","Fashion & Retail","Retail"],[175,"Tench Coxe",9200.0,"Finance & Investments","Venture capital","Venture capital"],[175,"Todd Boehly",9200.0,"Finance & Investments","Holding companies & investors","Finance"],[177,"Dennis Washington",9100.0,"Logistics","Logistics","Construction, mining"],[177,"Igor Olenicoff",9100.0,"Real Estate","Real Estate","Real estate"],[177,"Michael Xie",9100.0,"Technology","Technology","Cybersecurity"],[177,"Tamara Gustavson",9100.0,"Service","Service","Self storage"],[181,"Leonard Stern",9000.0,"Real Estate","Real Estate","Real estate"],[181,"Sami Mnaymneh",9000.0,"Finance & Investments","Private equity & buyouts","Private equity"],[181,"Tony Tamer",9000.0,"Finance & Investments","Private equity & buyouts","Private equity"],[181,"William Goldring & family",9000.0,"Food & Beverage","Food & Beverage","Liquor"],[185,"Brian Armstrong",8900.0,"Finance & Investments","Crypto","Cryptocurrency"],[185,"Stanley Druckenmiller",8900.0,"Finance & Investments","Hedge funds","Hedge funds"],[187,"Carl Cook",8800.0,"Healthcare","Healthcare","Medical devices"],[187,"Jeffrey Lurie",8800.0,"Sports","Sports","Philadelphia Eagles"],[187,"Robert Rowling",8800.0,"Service","Service","Hotels, investments"],[190,"Min Kao & family",8700.0,"Technology","Technology","Navigation equipment"],[190,"Steven Rales",8700.0,"Manufacturing","Manufacturing","Manufacturing, investments"],[192,"Dustin Moskovitz",8600.0,"Technology","Technology","Facebook"],[192,"George Soros",8600.0,"Finance & Investments","Hedge funds","Hedge funds"],[192,"Michael Milken",8600.0,"Finance & Investments","Holding companies & investors","Investments"],[195,"Charles Simonyi",8500.0,"Technology","Technology","Microsoft"],[196,"James Clark",8400.0,"Technology","Technology","Netscape, investments"],[196,"Leo KoGuan",8400.0,"Technology","Technology","IT provider"],[196,"Pauline MacMillan Keinath",8400.0,"Food & Beverage","Food & Beverage","Cargill"],[199,"Andrew Cherng",8300.0,"Food & Beverage","Food & Beverage","Fast food"],[199,"Chris Larsen",8300.0,"Finance & Investments","Crypto","Cryptocurrency"],[199,"Daniel Ziff",8300.0,"Finance & Investments","Holding companies & investors","Investments"],[199,"Dirk Ziff",8300.0,"Finance & Investments","Holding companies & investors","Investments"],[199,"John Morris",8300.0,"Fashion & Retail","Fashion & Retail","Sporting goods retail"],[199,"Marc Rowan",8300.0,"Finance & Investments","Private equity & buyouts","Private equity"],[199,"Matthew Prince",8300.0,"Technology","Technology","Cybersecurity"],[199,"Peggy Cherng",8300.0,"Food & Beverage","Food & Beverage","Fast food"],[199,"Ray Lee Hunt",8300.0,"Energy","Energy","Oil, real estate"],[199,"Robert Ziff",8300.0,"Finance & Investments","Holding companies & investors","Investments"],[199,"Vincent Viola",8300.0,"Finance & Investments","Trading & brokerage","Electronic trading"],[210,"Ty Warner",8200.0,"Real Estate","Real Estate","Plush toys, real estate"],[211,"Chase Coleman, III.",8100.0,"Finance & Investments","Hedge funds","Investments"],[211,"Edward Roski, Jr.",8100.0,"Real Estate","Real Estate","Real estate"],[211,"Karen Pritzker",8100.0,"Finance & Investments","Holding companies & investors","Hotels, investments"],[211,"Paul Tudor Jones, II.",8100.0,"Finance & Investments","Hedge funds","Hedge funds"],[215,"Clifford Asness",8000.0,"Finance & Investments","Asset & wealth management","Money management"],[216,"Steven Spielberg",7900.0,"Media & Entertainment","Media & Entertainment","Movies"],[217,"Baiju Bhatt",7800.0,"Finance & Investments","Trading & brokerage","Stock trading app"],[218,"Cal McNair",7700.0,"Sports","Sports","Houston Texans"],[218,"Herb Simon",7700.0,"Real Estate","Real Estate","Real estate"],[218,"Jack Dorsey",7700.0,"Technology","Technology","Twitter, Square"],[218,"Jim Kavanaugh",7700.0,"Technology","Technology","IT provider"],[218,"Michael Kim",7700.0,"Finance & Investments","Private equity & buyouts","Private equity"],[218,"Michael Moritz",7700.0,"Finance & Investments","Venture capital","Venture capital"],[224,"Ali Ghodsi",7600.0,"Technology","Technology","Data analytics"],[224,"Blair Parry-Okeden",7600.0,"Media & Entertainment","Media & Entertainment","Media, automotive"],[224,"Elizabeth Uihlein",7600.0,"Manufacturing","Manufacturing","Packaging materials"],[224,"Jim Kennedy",7600.0,"Media & Entertainment","Media & Entertainment","Media, automotive"],[224,"Joseph Liemandt",7600.0,"Technology","Technology","Software"],[224,"Marian Ilitch & family",7600.0,"Food & Beverage","Food & Beverage","Little Caesars Pizza"],[224,"Mike Brown & family",7600.0,"Sports","Sports","Cincinnati Bengals"],[224,"Richard Uihlein",7600.0,"Manufacturing","Manufacturing","Packaging materials"],[232,"Thomas Pritzker",7500.0,"Finance & Investments","Holding companies & investors","Hotels, investments"],[233,"H. Ross Perot, Jr.",7400.0,"Real Estate","Real Estate","Real estate"],[233,"Thai Lee",7400.0,"Technology","Technology","IT provider"],[235,"Howard Lutnick & family",7300.0,"Finance & Investments","Trading & brokerage","Finance"],[235,"Lynsi Snyder",7300.0,"Food & Beverage","Food & Beverage","In-N-Out Burger"],[235,"Mark Walter",7300.0,"Finance & Investments","Asset & wealth management","Finance, asset management"],[238,"Jayshree Ullal",7200.0,"Technology","Technology","Computer networking"],[238,"Mike Hollingshead & family",7200.0,"Construction & Engineering","Construction & Engineering","Concrete"],[238,"Paul Singer",7200.0,"Finance & Investments","Hedge funds","Hedge funds"],[241,"Neal Blue & family",7100.0,"Manufacturing","Manufacturing","Defense"],[241,"Rick Caruso",7100.0,"Real Estate","Real Estate","Real estate"],[241,"Ronda Stryker",7100.0,"Healthcare","Healthcare","Medical equipment"],[241,"Vlad Tenev",7100.0,"Finance & Investments","Trading & brokerage","Stock trading app"],[245,"Donald Trump",7000.0,"Real Estate","Real Estate","Real estate"],[245,"Edythe Broad & family",7000.0,"Diversified","Diversified","Homebuilding, insurance"],[245,"Ion Stoica",7000.0,"Technology","Technology","Data analytics"],[245,"Matei Zaharia",7000.0,"Technology","Technology","Data analytics"],[245,"Robert Bass",7000.0,"Energy","Energy","Oil, investments"],[245,"Robert Clark",7000.0,"Construction & Engineering","Construction & Engineering","Construction"],[251,"Charles B. Johnson",6900.0,"Finance & Investments","Asset & wealth management","Franklin Templeton"],[251,"Jeremy Jacobs, Sr. & family",6900.0,"Service","Service","Food service"],[251,"John Brown",6900.0,"Healthcare","Healthcare","Medical equipment"],[251,"Ronald Wanek",6900.0,"Manufacturing","Manufacturing","Furniture"],[255,"Mark Cuban",6800.0,"Media & Entertainment","Media & Entertainment","Online media, Dallas Mavericks"],[256,"Jim Davis & family",6700.0,"Manufacturing","Manufacturing","New Balance"],[256,"Mat Ishbia",6700.0,"Finance & Investments","Banking, lending & insurance","Mortgage lender"],[256,"Mitchell Morgan & family",6700.0,"Real Estate","Real Estate","Real estate"],[256,"Stephen Cohen",6700.0,"Technology","Technology","Software"],[260,"Johnelle Hunt",6600.0,"Logistics","Logistics","Trucking"],[261,"Eric Lefkofsky",6500.0,"Technology","Technology","Groupon, investments"],[261,"Jon Yarbrough",6500.0,"Gambling & Casinos","Gambling & Casinos","Gambling machines"],[261,"Robert Hale, Jr.",6500.0,"Telecom","Telecom","Telecom"],[264,"Justin Ishbia",6400.0,"Finance & Investments","Private equity & buyouts","Private equity"],[264,"Margot Birmingham Perot",6400.0,"Technology","Technology","Computer services, real estate"],[264,"Tom Golisano",6400.0,"Service","Service","Payroll services"],[267,"Bill Haslam",6300.0,"Fashion & Retail","Fashion & Retail","Gas stations"],[267,"Stephen Feinberg & family",6300.0,"Finance & Investments","Private equity & buyouts","Private equity"],[269,"Doug Meijer & family",6200.0,"Fashion & Retail","Fashion & Retail","Supermarkets"],[269,"Hank Meijer & family",6200.0,"Fashion & Retail","Fashion & Retail","Supermarkets"],[269,"John Catsimatidis",6200.0,"Energy","Energy","Oil, real estate"],[269,"John Henry",6200.0,"Sports","Sports","Sports"],[269,"Mark Meijer & family",6200.0,"Fashion & Retail","Fashion & Retail","Supermarkets"],[269,"Michael Novogratz",6200.0,"Finance & Investments","Crypto","Investments, cryptocurrency"],[269,"Peter Cancro",6200.0,"Food & Beverage","Food & Beverage","Jersey Mike's Subs"],[269,"Trevor Rees-Jones",6200.0,"Energy","Energy","Oil & gas"],[277,"Annette Lerner & family",6100.0,"Real Estate","Real Estate","Real estate"],[277,"Eren Ozmen",6100.0,"Manufacturing","Manufacturing","Aerospace"],[277,"Jean (Gigi) Pritzker",6100.0,"Service","Service","Hotels, investments"],[277,"Joseph Grendys",6100.0,"Food & Beverage","Food & Beverage","Poultry processing"],[277,"Peter Kellogg",6100.0,"Finance & Investments","Trading & brokerage","Investments"],[277,"Rakesh Gangwal",6100.0,"Service","Service","Airline"],[283,"Archie Aldis Emmerson & family",6000.0,"Manufacturing","Manufacturing","Timberland, lumber mills"],[283,"Barry Diller",6000.0,"Media & Entertainment","Media & Entertainment","Online media"],[283,"Robert Faith",6000.0,"Real Estate","Real Estate","Real estate management"],[283,"Rupert Johnson, Jr.",6000.0,"Finance & Investments","Asset & wealth management","Franklin Templeton"],[287,"Fatih Ozmen",5900.0,"Manufacturing","Manufacturing","Aerospace"],[287,"Isaac Perlmutter",5900.0,"Media & Entertainment","Media & Entertainment","Marvel comics"],[287,"Jeff Skoll",5900.0,"Technology","Technology","EBay"],[287,"Palmer Luckey",5900.0,"Technology","Technology","Virtual reality, defense technology"],[287,"Romesh T. Wadhwani",5900.0,"Technology","Technology","Software"],[287,"Russell Savage",5900.0,"Food & Beverage","Food & Beverage","Energy drinks"],[293,"Eric Yuan & family",5800.0,"Technology","Technology","Zoom Video Communications"],[293,"Gary Rollins & family",5800.0,"Service","Service","Pest control"],[293,"Gordon Getty & family",5800.0,"Energy","Energy","Getty Oil"],[293,"Lynda Resnick",5800.0,"Food & Beverage","Food & Beverage","Agriculture"],[293,"Penny Pritzker",5800.0,"Finance & Investments","Holding companies & investors","Hotels, investments"],[293,"Reinhold Schmieding",5800.0,"Healthcare","Healthcare","Medical devices"],[293,"Robert Rich, Jr.",5800.0,"Food & Beverage","Food & Beverage","Frozen foods"],[293,"Steven Hao",5800.0,"Technology","Technology","AI software"],[293,"Stewart Resnick",5800.0,"Food & Beverage","Food & Beverage","Agriculture"],[302,"Ben Lamm",5700.0,"Technology","Technology","Biotech"],[302,"Bert Beveridge",5700.0,"Food & Beverage","Food & Beverage","Vodka"],[302,"Michael Intrator",5700.0,"Technology","Technology","Technology"],[302,"Stephen Mandel, Jr.",5700.0,"Finance & Investments","Hedge funds","Hedge funds"],[306,"Dan Kurzius",5600.0,"Technology","Technology","Email marketing"],[306,"Pablo Legorreta",5600.0,"Finance & Investments","Holding companies & investors","Investments"],[306,"Robert Low",5600.0,"Logistics","Logistics","Trucking"],[306,"Steven Klinsky",5600.0,"Finance & Investments","Private equity & buyouts","Investments"],[306,"Thomas Tull",5600.0,"Media & Entertainment","Media & Entertainment","Movies, investments"],[311,"Andy Mills",5500.0,"Healthcare","Healthcare","Medical supplies"],[311,"John A. Sobrato & family",5500.0,"Real Estate","Real Estate","Real estate"],[311,"John Sall",5500.0,"Technology","Technology","Software"],[311,"Luke Nosek",5500.0,"Finance & Investments","Venture capital","Venture capital"],[315,"Larry Gies",5400.0,"Finance & Investments","Private equity & buyouts","private equity"],[315,"Ratmir Timashev",5400.0,"Technology","Technology","Software"],[315,"Ronald Lauder",5400.0,"Fashion & Retail","Fashion & Retail","Estee Lauder"],[318,"Dan Snyder",5300.0,"Sports","Sports","Washington Commanders"],[318,"George Lucas",5300.0,"Media & Entertainment","Media & Entertainment","Star Wars"],[318,"Gwendolyn Sontheim Meyer",5300.0,"Food & Beverage","Food & Beverage","Cargill"],[318,"Joe Mansueto",5300.0,"Finance & Investments","Financial data & research","Investment research"],[318,"Marc Stad",5300.0,"Finance & Investments","Venture capital","Venture capital"],[318,"Paul Foster",5300.0,"Energy","Energy","Oil refining"],[318,"Phil Ruffin",5300.0,"Diversified","Diversified","Casinos, real estate"],[325,"Catherine Commisso & family",5200.0,"Telecom","Telecom","Telecom"],[325,"Dagmar Dolby & family",5200.0,"Technology","Technology","Dolby Laboratories"],[325,"Daniel D'Aniello",5200.0,"Finance & Investments","Private equity & buyouts","Private equity"],[325,"David Filo",5200.0,"Technology","Technology","Yahoo"],[325,"Gail Miller & family",5200.0,"Automotive","Automotive","Car dealerships"],[325,"Helen Johnson-Leipold",5200.0,"Manufacturing","Manufacturing","Cleaning products"],[325,"Jon Stryker",5200.0,"Healthcare","Healthcare","Medical equipment"],[325,"Mitchell Rales",5200.0,"Manufacturing","Manufacturing","Manufacturing, investments"],[325,"Scott Cook",5200.0,"Technology","Technology","Software"],[325,"Thomas Hagen & family",5200.0,"Finance & Investments","Banking, lending & insurance","Insurance"],[325,"Thomas Secunda",5200.0,"Finance & Investments","Financial data & research","Bloomberg LP"],[336,"H. Fisk Johnson",5100.0,"Manufacturing","Manufacturing","Cleaning products"],[336,"Marc Lore",5100.0,"Technology","Technology","Jet.com"],[336,"Mark Shoen",5100.0,"Automotive","Automotive","U-Haul"],[336,"Richard Schulze",5100.0,"Fashion & Retail","Fashion & Retail","Best Buy"],[336,"S. Curtis Johnson",5100.0,"Manufacturing","Manufacturing","Cleaning products"],[336,"Steven Udvar-Hazy",5100.0,"Service","Service","Aircraft leasing"],[336,"Winifred J. Marquart",5100.0,"Manufacturing","Manufacturing","Cleaning products"],[343,"Anthony Pritzker",5000.0,"Service","Service","Hotels, investments"],[343,"Arturo Moreno",5000.0,"Sports","Sports","Billboards, Los Angeles Angels"],[343,"Ben Chestnut",5000.0,"Technology","Technology","Email marketing"],[343,"Byron Trott",5000.0,"Finance & Investments","Private equity & buyouts","Investments"],[343,"David MacNeil",5000.0,"Manufacturing","Manufacturing","Automobile accessories"],[343,"James Chambers",5000.0,"Media & Entertainment","Media & Entertainment","Media, automotive"],[343,"Katharine Rayner",5000.0,"Media & Entertainment","Media & Entertainment","Media, automotive"],[343,"Margaretta Taylor",5000.0,"Media & Entertainment","Media & Entertainment","Media, automotive"],[343,"Scott Kapnick",5000.0,"Finance & Investments","Private equity & buyouts","Private equity"],[343,"Todd Christopher",5000.0,"Fashion & Retail","Fashion & Retail","Hair care products"],[353,"Jim Coulter",4900.0,"Finance & Investments","Private equity & buyouts","Private equity"],[353,"John Middleton",4900.0,"Food & Beverage","Food & Beverage","Tobacco"],[353,"Robert Johnson & family",4900.0,"Sports","Sports","Johnson & Johnson, New York Jets"],[356,"Abel Avellan",4800.0,"Telecom","Telecom","telecoms"],[356,"Austen Cargill, II.",4800.0,"Food & Beverage","Food & Beverage","Cargill"],[356,"C. Dean Metropoulos",4800.0,"Food & Beverage","Food & Beverage","Investments"],[356,"Daniel Och",4800.0,"Finance & Investments","Hedge funds","Hedge funds"],[356,"Donald Sterling",4800.0,"Real Estate","Real Estate","Real estate"],[356,"Hamilton James & family",4800.0,"Finance & Investments","Private equity & buyouts","Investments"],[356,"Herbert Wertheim",4800.0,"Finance & Investments","Holding companies & investors","Investments"],[356,"James Cargill, II.",4800.0,"Food & Beverage","Food & Beverage","Cargill"],[356,"Marianne Liebmann",4800.0,"Food & Beverage","Food & Beverage","Cargill"],[356,"Rodger Riney & family",4800.0,"Finance & Investments","Trading & brokerage","Discount brokerage"],[356,"Weili Dai",4800.0,"Technology","Technology","Semiconductors"],[367,"Don Vultaggio & family",4700.0,"Food & Beverage","Food & Beverage","Beverages"],[367,"Eleanor Butt Crook & family",4700.0,"Fashion & Retail","Fashion & Retail","Supermarkets"],[367,"Jennifer Gilbert",4700.0,"Finance & Investments","Banking, lending & insurance","Rocket Mortgage"],[367,"Michael Jordan",4700.0,"Sports","Sports","Charlotte Hornets, endorsements"],[367,"Peter Gassner",4700.0,"Technology","Technology","Software"],[367,"Reed Hastings",4700.0,"Technology","Technology","Netflix"],[367,"Stewart Rahr",4700.0,"Healthcare","Healthcare","Drug distribution"],[367,"Wendy Abrams",4700.0,"Healthcare","Healthcare","Medical supplies"],[375,"Bob Parsons",4600.0,"Technology","Technology","Web hosting"],[375,"Drayton McLane, Jr.",4600.0,"Fashion & Retail","Fashion & Retail","Walmart, logistics"],[375,"Keith Dunleavy & family",4600.0,"Healthcare","Healthcare","Health IT, Investments"],[375,"Michael Saylor",4600.0,"Technology","Technology","Cryptocurrency"],[375,"Ray Davis",4600.0,"Energy","Energy","Pipelines"],[380,"Amos Hostetter, Jr.",4500.0,"Media & Entertainment","Media & Entertainment","Cable television"],[380,"Behdad Eghbali",4500.0,"Finance & Investments","Private equity & buyouts","Private equity"],[380,"Carl Thoma",4500.0,"Finance & Investments","Private equity & buyouts","Private equity"],[380,"Daniel Sundheim",4500.0,"Finance & Investments","Hedge funds","Hedge funds"],[380,"David Rubenstein",4500.0,"Finance & Investments","Private equity & buyouts","Private equity"],[380,"Edward DeBartolo, Jr.",4500.0,"Real Estate","Real Estate","Shopping centers"],[380,"Edward Stack & family",4500.0,"Fashion & Retail","Fashion & Retail","Dick's Sporting Goods"],[380,"George Bishop",4500.0,"Energy","Energy","Oil & gas"],[380,"James Duff",4500.0,"Diversified","Diversified","Tires, diversified"],[380,"José E. Feliciano",4500.0,"Finance & Investments","Private equity & buyouts","Private equity"],[380,"Lynn Schusterman & family",4500.0,"Energy","Energy","Oil & gas, investments"],[380,"Sanjit Biswas",4500.0,"Technology","Technology","Sensor systems"],[380,"Sid Bass",4500.0,"Energy","Energy","Oil, investments"],[380,"Theodore Leonsis",4500.0,"Sports","Sports","Sports teams"],[380,"Thomas Duff",4500.0,"Diversified","Diversified","Tires, diversified"],[380,"Thomas Siebel",4500.0,"Technology","Technology","Business software"],[396,"August Troendle",4400.0,"Healthcare","Healthcare","Pharmaceutical services"],[396,"Daniel Loeb",4400.0,"Finance & Investments","Hedge funds","Hedge funds"],[396,"E. Joe Shoen",4400.0,"Automotive","Automotive","U-Haul"],[396,"Jim Davis",4400.0,"Service","Service","Staffing & recruiting"],[396,"John Bicket",4400.0,"Technology","Technology","Sensor systems"]]/*ROSTER:END*/;
+  var ROSTER = ROSTER_RAW.map(function (r) {
+    return { rank: r[0], name: r[1], worth: r[2], cat: r[3], field: r[4], source: r[5] };
+  });
+  var FIN = 'Finance & Investments';
+  var N = ROSTER.length;
+  var TOTAL = ROSTER.reduce(function (s, p) { return s + p.worth; }, 0);
+  var CATS = {};
+  ROSTER.forEach(function (p) { CATS[p.cat] = true; });
+  var NCATS = Object.keys(CATS).length;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+
+  // ---------- formatting ----------
+  function pct(v) { return v.toFixed(1) + '%'; }
+  function money(m) {
+    if (m >= 1e6) return '$' + (m / 1e6).toFixed(2) + 'T';
+    if (m >= 1e3) return '$' + (m / 1e3).toFixed(m >= 1e5 ? 0 : 1) + 'B';
+    return '$' + Math.round(m) + 'M';
+  }
+  function int(n) { return n.toLocaleString('en-US'); }
+  function signed(v) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(1); }
+
+  // ---------- data ----------
+  function aggregate(lens) {
+    var map = {}, rows = [];
+    ROSTER.forEach(function (p) {
+      var key = lens === 'forbes' ? p.cat : p.field;
+      var g = map[key];
+      if (!g) {
+        g = { name: key, cat: p.cat, isSub: key !== p.cat, count: 0, worth: 0, people: [] };
+        map[key] = g; rows.push(g);
+      }
+      g.count += 1; g.worth += p.worth; g.people.push(p);
+    });
+    rows.forEach(function (g) {
+      g.pct = 100 * g.count / N;
+      g.wpct = 100 * g.worth / TOTAL;
+      g.avg = g.worth / g.count;
+      g.people.sort(function (a, b) { return a.rank - b.rank; });
+      g.top = g.people.slice(0, 3).map(function (p) { return p.name; });
+    });
+    rows.sort(function (a, b) { return (b.count - a.count) || (b.worth - a.worth) || a.name.localeCompare(b.name); });
+    return rows;
+  }
+
+  function niceMax(v) {
+    var steps = [10, 15, 20, 25, 30, 40, 50, 60, 75, 100];
+    for (var i = 0; i < steps.length; i++) if (steps[i] >= v * 1.02) return steps[i];
+    return 100;
+  }
+
+  // ---------- svg helpers ----------
+  var measureCtx = document.createElement('canvas').getContext('2d');
+  var LABEL_FONT = '500 13px "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif';
+  function textW(s, font) { measureCtx.font = font || LABEL_FONT; return measureCtx.measureText(s).width; }
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) if (attrs[k] !== null && attrs[k] !== undefined) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function txt(parent, x, y, s, attrs) {
+    var a = { x: x, y: y };
+    for (var k in attrs) a[k] = attrs[k];
+    var t = el('text', a, parent);
+    t.textContent = s;
+    return t;
+  }
+  function barPath(x0, y, w, h, r) {
+    r = Math.max(0, Math.min(r, w / 2, h / 2));
+    if (w <= 0) return '';
+    return 'M' + x0 + ',' + y + ' H' + (x0 + w - r) +
+      ' a' + r + ',' + r + ' 0 0 1 ' + r + ',' + r +
+      ' V' + (y + h - r) +
+      ' a' + r + ',' + r + ' 0 0 1 ' + (-r) + ',' + r +
+      ' H' + x0 + ' Z';
+  }
+  function tag(parent, x, yMid, label) {
+    var g = el('g', { 'class': 'tag' }, parent);
+    var w = 30, h = 15;
+    el('rect', { x: x, y: yMid - h / 2, width: w, height: h, rx: 3 }, g);
+    txt(g, x + w / 2, yMid, label, { 'text-anchor': 'middle', dy: '.36em' });
+  }
+
+  // Shared row geometry for both charts.
+  function layout(container, rows, maxV, valueW) {
+    var W = Math.max(300, Math.floor(container.clientWidth || 720));
+    var narrow = W < 600;
+    var labelW = 0;
+    if (!narrow) {
+      var widest = 0;
+      rows.forEach(function (r) {
+        var w = textW(r.name) + (r.isSub ? 37 : 0);
+        if (w > widest) widest = w;
+      });
+      labelW = Math.min(300, Math.ceil(widest) + 16);
+    }
+    var rowH = narrow ? 46 : 30;
+    var padR = 6;
+    var plotX0 = narrow ? 0 : labelW;
+    var plotW = W - plotX0 - valueW - padR;
+    var top = narrow ? 4 : 6;
+    var axisH = 24;
+    var H = top + rows.length * rowH + axisH;
+    return {
+      W: W, H: H, narrow: narrow, labelW: labelW, rowH: rowH, plotX0: plotX0, plotW: plotW,
+      top: top, axisH: axisH, maxV: maxV,
+      x: function (v) { return plotX0 + (v / maxV) * plotW; }
+    };
+  }
+
+  function drawFrame(svg, L, nRows) {
+    var step = L.maxV <= 30 ? 5 : 10;
+    var yTop = L.top, yBot = L.top + nRows * L.rowH;
+    var grid = el('g', { 'class': 'grid' }, svg);
+    var axis = el('g', { 'class': 'axis' }, svg);
+    for (var v = 0; v <= L.maxV + 1e-9; v += step) {
+      var X = L.x(v);
+      el('line', { x1: X, x2: X, y1: yTop, y2: yBot, 'class': v === 0 ? 'baseline' : null }, grid);
+      txt(axis, X, yBot + 16, v + '%', { 'text-anchor': (v === 0 && L.narrow) ? 'start' : 'middle' });
+    }
+  }
+
+  function rowLabel(g, L, r, y0) {
+    var labelY = L.narrow ? y0 + 14 : y0 + L.rowH / 2;
+    txt(g, 0, labelY, r.name, { 'class': 'lbl', dy: L.narrow ? '0' : '.35em' });
+    if (r.isSub) tag(g, Math.ceil(textW(r.name)) + 7, labelY - (L.narrow ? 4 : 0), 'FIN');
+    return labelY;
+  }
+
+  // ---------- tooltip ----------
+  function makeTip(container) {
+    var tip = document.createElement('div');
+    tip.className = 'tip';
+    tip.hidden = true;
+    container.appendChild(tip);
+    function place(px, py) {
+      var cw = container.clientWidth, ch = container.clientHeight;
+      var tw = tip.offsetWidth, th = tip.offsetHeight;
+      var left = px + 14;
+      if (left + tw > cw) left = Math.max(0, px - tw - 14);
+      var top = py - th / 2;
+      if (top < 0) top = 0;
+      if (top + th > ch) top = Math.max(0, ch - th);
+      tip.style.left = left + 'px';
+      tip.style.top = top + 'px';
+    }
+    function rel(e) {
+      var b = container.getBoundingClientRect();
+      return { x: e.clientX - b.left, y: e.clientY - b.top };
+    }
+    return {
+      bind: function (g, build, anchor) {
+        g.addEventListener('pointerenter', function (e) {
+          tip.replaceChildren.apply(tip, build()); tip.hidden = false; var p = rel(e); place(p.x, p.y);
+        });
+        g.addEventListener('pointermove', function (e) { if (!tip.hidden) { var p = rel(e); place(p.x, p.y); } });
+        g.addEventListener('pointerleave', function () { tip.hidden = true; });
+        g.addEventListener('focus', function () {
+          tip.replaceChildren.apply(tip, build()); tip.hidden = false; var p = anchor(); place(p.x, p.y);
+        });
+        g.addEventListener('blur', function () { tip.hidden = true; });
+        g.addEventListener('keydown', function (e) { if (e.key === 'Escape') tip.hidden = true; });
+      },
+      hide: function () { tip.hidden = true; },
+      node: tip
+    };
+  }
+  function div(cls, text) { var d = document.createElement('div'); d.className = cls; d.textContent = text; return d; }
+  function keyRow(color, strong, sub) {
+    var d = document.createElement('div'); d.className = 't-row';
+    var k = document.createElement('span'); k.className = 't-key'; k.style.background = color;
+    var s = document.createElement('strong'); s.textContent = strong;
+    var t = document.createElement('span'); t.className = 't-sub'; t.textContent = sub;
+    d.appendChild(k); d.appendChild(s); d.appendChild(t);
+    return d;
+  }
+
+  // ---------- chart 1: share of the list ----------
+  function renderShare(container, rows) {
+    container.replaceChildren();
+    var maxV = niceMax(Math.max.apply(null, rows.map(function (r) { return r.pct; })));
+    var L = layout(container, rows, maxV, 58);
+    var svg = el('svg', {
+      viewBox: '0 0 ' + L.W + ' ' + L.H, width: L.W, height: L.H,
+      role: 'list', 'aria-label': 'Share of the Forbes 400 by field, ' + rows.length + ' rows'
+    }, container);
+    drawFrame(svg, L, rows.length);
+    var tip = makeTip(container);
+    var barH = 16;
+
+    rows.forEach(function (r, i) {
+      var y0 = L.top + i * L.rowH;
+      var barY = L.narrow ? y0 + 22 : y0 + (L.rowH - barH) / 2;
+      var g = el('g', {
+        'class': 'row', tabindex: 0, role: 'listitem',
+        'aria-label': r.name + ': ' + pct(r.pct) + ' of the list, ' + r.count + ' members'
+      }, svg);
+      el('rect', { 'class': 'hit', x: 0, y: y0, width: L.W, height: L.rowH, rx: 4 }, g);
+      rowLabel(g, L, r, y0);
+      var w = L.x(r.pct) - L.plotX0;
+      el('path', { 'class': 'bar', d: barPath(L.plotX0, barY, w, barH, 4) }, g);
+      txt(g, L.x(r.pct) + 7, barY + barH / 2, pct(r.pct), { 'class': 'val', dy: '.35em' });
+      tip.bind(g, function () {
+        return [
+          div('t-name', r.name + (r.isSub ? ' · within Finance & Investments' : '')),
+          div('t-val', pct(r.pct) + ' of the list'),
+          div('t-sub', r.count + ' of ' + N + ' members'),
+          div('t-sub', money(r.worth) + ' combined · ' + pct(r.wpct) + ' of list wealth'),
+          div('t-sub t-gap', 'Highest ranked: ' + r.top.join(', '))
+        ];
+      }, function () { return { x: L.x(r.pct) + 50, y: barY + barH / 2 }; });
+    });
+  }
+
+  function tableShare(container, rows, lens) {
+    container.replaceChildren();
+    var t = document.createElement('table');
+    var cap = document.createElement('caption'); cap.className = 'sr-only';
+    cap.textContent = 'Share of the Forbes 400 by field'; t.appendChild(cap);
+    var cols = [['Field', ''], ['Members', 'num'], ['% of list', 'num'], ['Combined net worth', 'num'], ['% of wealth', 'num']];
+    if (lens === 'detail') cols.splice(1, 0, ['Forbes category', '']);
+    var thead = t.createTHead(); var hr = thead.insertRow();
+    cols.forEach(function (c) { var th = document.createElement('th'); th.scope = 'col'; th.className = c[1]; th.textContent = c[0]; hr.appendChild(th); });
+    var tb = t.createTBody();
+    rows.forEach(function (r) {
+      var tr = tb.insertRow();
+      var cells = [[r.name, ''], [r.count, 'num'], [pct(r.pct), 'num'], [money(r.worth), 'num'], [pct(r.wpct), 'num']];
+      if (lens === 'detail') cells.splice(1, 0, [r.isSub ? r.cat : '—', 'muted']);
+      cells.forEach(function (c) { var td = tr.insertCell(); td.className = c[1]; td.textContent = c[0]; });
+    });
+    var tf = t.createTFoot(); var fr = tf.insertRow();
+    var foot = [['Total', ''], [N, 'num'], ['100.0%', 'num'], [money(TOTAL), 'num'], ['100.0%', 'num']];
+    if (lens === 'detail') foot.splice(1, 0, ['', '']);
+    foot.forEach(function (c) { var td = fr.insertCell(); td.className = c[1]; td.textContent = c[0]; });
+    container.appendChild(t);
+  }
+
+  // ---------- chart 2: headcount vs wealth ----------
+  function renderWealth(container, rows) {
+    container.replaceChildren();
+    var maxV = niceMax(Math.max.apply(null, rows.map(function (r) { return Math.max(r.pct, r.wpct); })));
+    var L = layout(container, rows, maxV, 58);
+    var svg = el('svg', {
+      viewBox: '0 0 ' + L.W + ' ' + L.H, width: L.W, height: L.H,
+      role: 'list', 'aria-label': 'Share of members versus share of combined net worth by field'
+    }, container);
+    drawFrame(svg, L, rows.length);
+    var tip = makeTip(container);
+    var labeled = rows.slice().sort(function (a, b) { return Math.abs(b.wpct - b.pct) - Math.abs(a.wpct - a.pct); })
+      .slice(0, 2).map(function (r) { return r.name; });
+    var listAvg = TOTAL / N;
+    var VAL_FONT = '600 12px "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif';
+
+    rows.forEach(function (r, i) {
+      var y0 = L.top + i * L.rowH;
+      var cy = L.narrow ? y0 + 30 : y0 + L.rowH / 2;
+      var g = el('g', {
+        'class': 'row', tabindex: 0, role: 'listitem',
+        'aria-label': r.name + ': ' + pct(r.pct) + ' of members, ' + pct(r.wpct) + ' of combined net worth'
+      }, svg);
+      el('rect', { 'class': 'hit', x: 0, y: y0, width: L.W, height: L.rowH, rx: 4 }, g);
+      rowLabel(g, L, r, y0);
+      var xa = L.x(r.pct), xb = L.x(r.wpct);
+      el('line', { 'class': 'conn', x1: Math.min(xa, xb), x2: Math.max(xa, xb), y1: cy, y2: cy }, g);
+      // members: disc with a surface ring
+      el('circle', { 'class': 'ring', cx: xa, cy: cy, r: 7 }, g);
+      el('circle', { 'class': 'mk mk-1', cx: xa, cy: cy, r: 5 }, g);
+      // wealth: diamond with a surface ring
+      el('rect', { 'class': 'ring', x: xb - 7, y: cy - 7, width: 14, height: 14, rx: 2, transform: 'rotate(45 ' + xb + ' ' + cy + ')' }, g);
+      el('rect', { 'class': 'mk mk-2', x: xb - 5, y: cy - 5, width: 10, height: 10, rx: 1.5, transform: 'rotate(45 ' + xb + ' ' + cy + ')' }, g);
+      if (labeled.indexOf(r.name) >= 0) {
+        var lo = Math.min(r.pct, r.wpct), hi = Math.max(r.pct, r.wpct);
+        // The low value only gets a direct label when it fits between the
+        // baseline and its mark; otherwise the tooltip and table carry it.
+        if (L.x(lo) - 11 - textW(pct(lo), VAL_FONT) >= L.plotX0) {
+          txt(g, L.x(lo) - 11, cy, pct(lo), { 'class': 'val', 'text-anchor': 'end', dy: '.35em' });
+        }
+        txt(g, L.x(hi) + 11, cy, pct(hi), { 'class': 'val', dy: '.35em' });
+      }
+      tip.bind(g, function () {
+        var gap = r.wpct - r.pct;
+        return [
+          div('t-name', r.name),
+          keyRow('var(--series-1)', pct(r.pct), 'of members · ' + r.count + ' people'),
+          keyRow('var(--series-2)', pct(r.wpct), 'of wealth · ' + money(r.worth)),
+          div('t-sub t-gap', 'Wealth share runs ' + Math.abs(gap).toFixed(1) + ' points ' + (gap >= 0 ? 'above' : 'below') + ' headcount'),
+          div('t-sub', 'Average ' + money(r.avg) + ' per member · list average ' + money(listAvg))
+        ];
+      }, function () { return { x: Math.max(xa, xb) + 50, y: cy }; });
+    });
+  }
+
+  function tableWealth(container, rows) {
+    container.replaceChildren();
+    var t = document.createElement('table');
+    var cap = document.createElement('caption'); cap.className = 'sr-only';
+    cap.textContent = 'Share of members versus share of combined net worth by field'; t.appendChild(cap);
+    var cols = [['Field', ''], ['% of members', 'num'], ['% of wealth', 'num'], ['Gap (pts)', 'num'], ['Members', 'num'], ['Combined net worth', 'num'], ['Average per member', 'num']];
+    var thead = t.createTHead(); var hr = thead.insertRow();
+    cols.forEach(function (c) { var th = document.createElement('th'); th.scope = 'col'; th.className = c[1]; th.textContent = c[0]; hr.appendChild(th); });
+    var tb = t.createTBody();
+    rows.forEach(function (r) {
+      var tr = tb.insertRow();
+      [[r.name, ''], [pct(r.pct), 'num'], [pct(r.wpct), 'num'], [signed(r.wpct - r.pct), 'num'], [r.count, 'num'], [money(r.worth), 'num'], [money(r.avg), 'num']]
+        .forEach(function (c) { var td = tr.insertCell(); td.className = c[1]; td.textContent = c[0]; });
+    });
+    var tf = t.createTFoot(); var fr = tf.insertRow();
+    [['Total', ''], ['100.0%', 'num'], ['100.0%', 'num'], ['', 'num'], [N, 'num'], [money(TOTAL), 'num'], [money(TOTAL / N), 'num']]
+      .forEach(function (c) { var td = fr.insertCell(); td.className = c[1]; td.textContent = c[0]; });
+    container.appendChild(t);
+  }
+
+  // ---------- page state ----------
+  var state = { lens: 'detail' };
+  try { var saved = localStorage.getItem('f400-lens'); if (saved === 'forbes' || saved === 'detail') state.lens = saved; } catch (e) {}
+
+  var NOTES = {
+    detail: 'Forbes files all 108 financiers under one category. This view splits them by the vehicle behind the fortune: private equity, hedge funds, venture capital and so on. Rows tagged FIN are those sub-fields; together they still add up to ' + pct(100 * ROSTER.filter(function (p) { return p.cat === FIN; }).length / N) + ' of the list.',
+    forbes: 'Forbes’ own ' + NCATS + ' industry categories, exactly as published, one per member.'
+  };
+
+  function setLens(lens) {
+    state.lens = lens;
+    $('lens-detail').setAttribute('aria-pressed', lens === 'detail');
+    $('lens-forbes').setAttribute('aria-pressed', lens === 'forbes');
+    var note = $('lens-note');
+    note.replaceChildren();
+    if (lens === 'detail') {
+      var parts = NOTES.detail.split('FIN');
+      note.appendChild(document.createTextNode(parts[0]));
+      var code = document.createElement('code'); code.textContent = 'FIN'; note.appendChild(code);
+      note.appendChild(document.createTextNode(parts[1]));
+    } else {
+      note.textContent = NOTES.forbes;
+    }
+    try { localStorage.setItem('f400-lens', lens); } catch (e) {}
+    renderAll();
+  }
+
+  function renderAll() {
+    var rows = aggregate(state.lens);
+    var sc = $('share-chart'), st = $('share-table'), wc = $('wealth-chart'), wt = $('wealth-table');
+    if (!sc.hidden) renderShare(sc, rows);
+    if (!st.hidden) tableShare(st, rows, state.lens);
+    if (!wc.hidden) renderWealth(wc, rows);
+    if (!wt.hidden) tableWealth(wt, rows);
+    $('share-foot').textContent = state.lens === 'detail'
+      ? 'Bars sum to 100% across ' + rows.length + ' fields. Hover or tab to a row for member counts, combined net worth and the highest-ranked names.'
+      : 'Bars sum to 100% across Forbes’ ' + rows.length + ' categories. Hover or tab to a row for member counts, combined net worth and the highest-ranked names.';
+  }
+
+  function wireView(prefix) {
+    var bc = $(prefix + '-view-chart'), bt = $(prefix + '-view-table');
+    var chart = $(prefix + '-chart'), table = $(prefix + '-table');
+    function set(view) {
+      var isChart = view === 'chart';
+      bc.setAttribute('aria-pressed', isChart);
+      bt.setAttribute('aria-pressed', !isChart);
+      chart.hidden = !isChart;
+      table.hidden = isChart;
+      renderAll();
+    }
+    bc.addEventListener('click', function () { set('chart'); });
+    bt.addEventListener('click', function () { set('table'); });
+  }
+
+  // ---------- boot ----------
+  $('fact-members').textContent = int(N);
+  $('fact-total').textContent = money(TOTAL);
+  $('fact-cutoff').textContent = money(Math.min.apply(null, ROSTER.map(function (p) { return p.worth; })));
+  $('fact-cats').textContent = NCATS;
+
+  (function writeDek() {
+    var byCat = aggregate('forbes');
+    var first = byCat[0], tech = null;
+    byCat.forEach(function (r) { if (r.name === 'Technology') tech = r; });
+    if (!first || !tech) return;
+    var dek = $('dek');
+    dek.replaceChildren();
+    function b(s) { var e = document.createElement('strong'); e.textContent = s; return e; }
+    var year = document.querySelector('.wrap').getAttribute('data-list-year');
+    dek.appendChild(document.createTextNode('Share of the ' + year + ' list by field. '));
+    dek.appendChild(b(first.name));
+    dek.appendChild(document.createTextNode(' seats the most members at ' + pct(first.pct) + ', and '));
+    dek.appendChild(b(tech.name));
+    dek.appendChild(document.createTextNode(' is ' + (byCat[1] === tech ? 'second' : 'next') + ' at ' + pct(tech.pct) + '. But technology fortunes run far larger: that ' + Math.round(tech.pct) + '% of the people holds ' + pct(tech.wpct) + ' of the list’s combined ' + money(TOTAL).replace('T', ' trillion') + '.'));
+  })();
+
+  wireView('share');
+  wireView('wealth');
+  $('lens-detail').addEventListener('click', function () { setLens('detail'); });
+  $('lens-forbes').addEventListener('click', function () { setLens('forbes'); });
+  setLens(state.lens);
+
+  var raf = 0;
+  function scheduleRender() { cancelAnimationFrame(raf); raf = requestAnimationFrame(renderAll); }
+  if ('ResizeObserver' in window) {
+    var lastW = -1;
+    var ro = new ResizeObserver(function (entries) {
+      var w = Math.round(entries[0].contentRect.width);
+      if (w !== lastW) { lastW = w; scheduleRender(); }
+    });
+    ro.observe($('fig-share'));
+  } else {
+    window.addEventListener('resize', scheduleRender);
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleRender);
+})();
+</script>
