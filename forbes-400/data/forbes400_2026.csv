@@ -1,0 +1,401 @@
+rank,name,net_worth_musd,forbes_category,field,source,age,gender,state,self_made,slug
+1,Elon Musk,908000.0,Technology,Technology,"Tesla, SpaceX",55,M,Texas,True,elon-musk
+2,Jeff Bezos,378000.0,Technology,Technology,Amazon,62,M,Florida,True,jeff-bezos
+3,Larry Page,278000.0,Technology,Technology,Google,53,M,California,True,larry-page
+4,Michael Dell,263000.0,Technology,Technology,Dell Technologies,61,M,Texas,True,michael-dell
+5,Sergey Brin,256000.0,Technology,Technology,Google,53,M,California,True,sergey-brin
+6,Mark Zuckerberg,212000.0,Technology,Technology,Facebook,42,M,California,True,mark-zuckerberg
+7,Larry Ellison,204000.0,Technology,Technology,Oracle,82,M,Florida,True,larry-ellison
+8,Jensen Huang,199000.0,Technology,Technology,Semiconductors,63,M,California,True,jensen-huang
+9,Steve Ballmer,156000.0,Technology,Technology,Microsoft,70,M,Washington,True,steve-ballmer
+10,Warren Buffett,144000.0,Finance & Investments,Holding companies & investors,Berkshire Hathaway,96,M,Nebraska,True,warren-buffett
+11,Rob Walton & family,132000.0,Fashion & Retail,Fashion & Retail,Walmart,81,M,Arkansas,False,rob-walton
+12,Jim Walton & family,128000.0,Fashion & Retail,Fashion & Retail,Walmart,78,M,Arkansas,False,jim-walton
+13,Alice Walton,118000.0,Fashion & Retail,Fashion & Retail,Walmart,76,F,Texas,False,alice-walton
+14,Bill Gates,116000.0,Technology,Technology,Microsoft,70,M,Washington,True,bill-gates
+15,Thomas Peterffy,107000.0,Finance & Investments,Trading & brokerage,Discount brokerage,81,M,Florida,True,thomas-peterffy
+16,Michael Bloomberg,94900.0,Finance & Investments,Financial data & research,Bloomberg LP,84,M,New York,True,michael-bloomberg
+17,Julia Koch & family,84600.0,Diversified,Diversified,"Koch, Inc.",64,F,New York,False,julia-koch
+18,Jeff Yass,77800.0,Finance & Investments,Trading & brokerage,"Trading, investments",68,M,Pennsylvania,True,jeff-yass
+19,Charles Koch & family,76900.0,Diversified,Diversified,"Koch, Inc.",90,M,Kansas,False,charles-koch
+20,Ken Griffin,60500.0,Finance & Investments,Hedge funds,Hedge funds,57,M,Florida,True,ken-griffin
+21,Jacqueline Mars,50300.0,Food & Beverage,Food & Beverage,"Candy, pet food",86,F,Virginia,False,jacqueline-mars
+21,John Mars,50300.0,Food & Beverage,Food & Beverage,"Candy, pet food",90,M,Wyoming,False,john-mars
+23,Stephen Schwarzman,46400.0,Finance & Investments,Private equity & buyouts,Investments,79,M,New York,True,stephen-schwarzman
+24,Lukas Walton,44400.0,Fashion & Retail,Fashion & Retail,Walmart,39,M,Illinois,False,lukas-walton
+25,Abigail Johnson,41600.0,Finance & Investments,Asset & wealth management,Fidelity,64,F,Massachusetts,False,abigail-johnson
+26,Eric Schmidt,37800.0,Technology,Technology,Google,71,M,California,True,eric-schmidt
+27,Marilyn Simons & family,36600.0,Finance & Investments,Hedge funds,Hedge funds,75,F,New York,False,marilyn-simons
+28,Peter Thiel,35400.0,Finance & Investments,Venture capital,"Facebook, investments",58,M,,True,peter-thiel
+29,Len Blavatnik,35200.0,Diversified,Diversified,"Music, chemicals",69,M,,True,len-blavatnik
+30,Melinda French Gates,34600.0,Technology,Technology,Microsoft,62,F,Washington,False,melinda-french-gates
+31,Henry Samueli,33800.0,Technology,Technology,Semiconductors,71,M,California,True,henry-samueli
+32,"Thomas Frist, Jr. & family",33600.0,Healthcare,Healthcare,Hospitals,88,M,Tennessee,True,thomas-frist-jr
+33,Miriam Adelson & family,33500.0,Gambling & Casinos,Gambling & Casinos,Casinos,80,F,Nevada,False,miriam-adelson
+34,David Sun,32200.0,Technology,Technology,Computer hardware,74,M,California,True,david-sun
+34,Elaine Marshall & family,32200.0,Diversified,Diversified,Koch Inc.,84,F,Texas,False,elaine-marshall
+34,John Tu,32200.0,Technology,Technology,Computer hardware,85,M,California,True,john-tu
+37,Lyndal Stephens Greth & family,30000.0,Energy,Energy,Oil & gas,51,F,Texas,False,lyndal-stephens-greth
+38,Robert Pera,29600.0,Technology,Technology,Wireless networking,48,M,California,True,robert-pera
+39,David Tepper,28500.0,Finance & Investments,Hedge funds,Hedge funds,69,M,Florida,True,david-tepper
+40,MacKenzie Scott,27900.0,Technology,Technology,Amazon,56,F,Washington,False,mackenzie-scott
+41,Israel Englander,27600.0,Finance & Investments,Hedge funds,Hedge funds,77,M,New York,True,israel-englander
+41,Stanley Kroenke,27600.0,Sports,Sports,"Sports, real estate",79,M,Texas,True,stanley-kroenke
+43,Steve Cohen,26700.0,Finance & Investments,Hedge funds,Hedge funds,70,M,Connecticut,True,steve-cohen
+44,Phil Knight & family,25800.0,Fashion & Retail,Fashion & Retail,Nike,88,M,Oregon,True,phil-knight
+45,Greg Brockman,25500.0,Technology,Technology,OpenAI,37,M,California,True,greg-brockman
+46,Rupert Murdoch & family,25000.0,Media & Entertainment,Media & Entertainment,"Newspapers, TV network",95,M,New York,False,rupert-murdoch
+47,"Ernest Garcia, II.",24300.0,Automotive,Automotive,Used cars,69,M,Arizona,True,ernest-garcia-ii
+48,Diane Hendricks,23600.0,Construction & Engineering,Construction & Engineering,Building supplies,79,F,Wisconsin,True,diane-hendricks
+49,Jerry Jones & family,23500.0,Sports,Sports,Dallas Cowboys,83,M,Texas,True,jerry-jones
+50,Brett Adcock,23400.0,Technology,Technology,Robots,40,M,California,True,brett-adcock
+51,Daniel Gilbert,22900.0,Finance & Investments,"Banking, lending & insurance",Rocket Mortgage,64,M,Michigan,True,daniel-gilbert
+52,John Doerr,22800.0,Finance & Investments,Venture capital,Venture capital,75,M,California,True,john-doerr
+53,Christy Walton,22000.0,Fashion & Retail,Fashion & Retail,Walmart,77,F,Wyoming,False,christy-walton
+54,Rick Cohen & family,21900.0,Technology,Technology,Warehouse automation,74,M,New Hampshire,False,rick-cohen
+55,"Henry Nicholas, III.",21800.0,Technology,Technology,Semiconductors,66,M,California,True,henry-nicholas-iii
+56,Stephen Ross,21500.0,Real Estate,Real Estate,Real estate,86,M,Florida,True,stephen-ross
+57,Todd Graves,20000.0,Food & Beverage,Food & Beverage,Fast food,54,M,Louisiana,True,todd-graves
+58,Donald Bren,19800.0,Real Estate,Real Estate,Real estate,94,M,California,True,donald-bren
+59,Arthur Dantchik,19500.0,Finance & Investments,Trading & brokerage,"Trading, investments",68,M,Pennsylvania,True,arthur-dantchik
+60,Philip Anschutz,19300.0,Finance & Investments,Holding companies & investors,"Energy, sports, entertainment",86,M,Colorado,False,philip-anschutz
+61,Harold Hamm & family,19000.0,Energy,Energy,Oil & gas,80,M,Oklahoma,True,harold-hamm
+62,Ray Dalio,18900.0,Finance & Investments,Hedge funds,Hedge funds,77,M,Connecticut,True,ray-dalio
+63,Alexander Karp,18800.0,Technology,Technology,Software firm,58,M,New Hampshire,True,alexander-karp
+64,Jan Koum,18500.0,Technology,Technology,WhatsApp,50,M,California,True,jan-koum
+65,Edwin Chen,18000.0,Technology,Technology,Artificial intelligence,38,M,New York,True,edwin-chen
+66,Eric Smidt,17800.0,Fashion & Retail,Fashion & Retail,Hardware stores,66,M,California,True,eric-smidt
+67,Nancy Walton Laurie,17200.0,Fashion & Retail,Fashion & Retail,Walmart,75,F,Nevada,False,nancy-walton-laurie
+68,Antonio Gracias,17100.0,Finance & Investments,Private equity & buyouts,Investments,55,M,Florida,True,antonio-gracias
+69,Josh Kushner,16700.0,Finance & Investments,Venture capital,Venture capital,41,M,New York,True,josh-kushner
+70,George Kaiser,16500.0,Energy,Energy,"Oil & gas, banking",84,M,Oklahoma,False,george-kaiser
+70,Peter Mallouk,16500.0,Finance & Investments,Asset & wealth management,Wealth planning,56,M,Kansas,True,peter-mallouk
+70,Shahid Khan,16500.0,Automotive,Automotive,"Sports teams, auto parts",76,M,Florida,True,shahid-khan
+73,"Edward Johnson, IV.",16300.0,Finance & Investments,Asset & wealth management,Fidelity,61,M,Massachusetts,False,edward-johnson-iv
+74,"John Menard, Jr.",16000.0,Fashion & Retail,Fashion & Retail,Home improvement stores,86,M,Wisconsin,True,john-menard-jr
+75,Daniela Amodei,15500.0,Technology,Technology,Artificial intelligence,39,F,California,True,daniela-amodei
+75,Dario Amodei,15500.0,Technology,Technology,Artifical intelligence,43,M,California,True,dario-amodei
+75,Jack Clark,15500.0,Technology,Technology,Artificial intelligence,37,M,California,True,jack-clark
+75,Jared Kaplan,15500.0,Technology,Technology,Artificial intelligence,42,M,California,True,jared-kaplan
+75,Sam McCandlish,15500.0,Technology,Technology,Artificial intelligence,36,M,California,True,sam-mccandlish
+75,Tom Brown,15500.0,Technology,Technology,Artificial intelligence,39,M,California,True,tom-brown
+81,Robert Kraft,15200.0,Sports,Sports,"Manufacturing, New England Patriots",85,M,Massachusetts,True,robert-kraft
+82,Laurene Powell Jobs,15100.0,Technology,Technology,"Apple, Disney",62,F,California,False,laurene-powell-jobs
+83,George Roberts,15000.0,Finance & Investments,Private equity & buyouts,Private equity,83,M,California,True,george-roberts
+83,Ken Fisher,15000.0,Finance & Investments,Asset & wealth management,Money management,75,M,Texas,True,ken-fisher
+83,Leon Black,15000.0,Finance & Investments,Private equity & buyouts,Private equity,75,M,New York,True,leon-black
+86,Charles Schwab,14900.0,Finance & Investments,Trading & brokerage,Discount brokerage,89,M,California,True,charles-schwab
+87,Ralph Lauren & family,14800.0,Fashion & Retail,Fashion & Retail,Apparel,86,M,New York,True,ralph-lauren
+88,Jeffery Hildebrand,14700.0,Energy,Energy,Oil & gas,67,M,Texas,True,jeffery-hildebrand
+89,Elizabeth Johnson,14400.0,Finance & Investments,Asset & wealth management,Fidelity,63,F,Massachusetts,False,elizabeth-johnson
+90,J. Christopher Reyes,14300.0,Food & Beverage,Food & Beverage,Food distribution,72,M,Florida,True,j-christopher-reyes
+90,Jude Reyes,14300.0,Food & Beverage,Food & Beverage,Food distribution,70,M,Florida,True,jude-reyes
+90,Michael Sabel,14300.0,Energy,Energy,oil & gas,59,M,District of Columbia,True,michael-sabel
+90,Robert Pender,14300.0,Energy,Energy,oil & gas,73,M,Virginia,True,robert-pender
+94,Ann Walton Kroenke,14000.0,Fashion & Retail,Fashion & Retail,Walmart,77,F,Texas,False,ann-walton-kroenke
+95,Henry Kravis,13500.0,Finance & Investments,Private equity & buyouts,Private equity,82,M,New York,True,henry-kravis
+96,Pierre Omidyar,13400.0,Technology,Technology,"EBay, PayPal",59,M,Hawaii,True,pierre-omidyar
+96,Robert Duggan,13400.0,Healthcare,Healthcare,Pharmaceuticals,82,M,Florida,True,robert-duggan
+98,Brad Jacobs,13300.0,Logistics,Logistics,Logistics,70,M,Connecticut,True,brad-jacobs
+99,Arthur Blank,13200.0,Sports,Sports,Home Depot,83,M,Georgia,True,arthur-blank
+100,Richard Kinder,12900.0,Energy,Energy,Pipelines,81,M,Texas,True,richard-kinder
+101,Charles Ergen,12800.0,Media & Entertainment,Media & Entertainment,Satellite TV,73,M,Colorado,True,charles-ergen
+102,Dan Friedkin,12700.0,Automotive,Automotive,Toyota dealerships,61,M,Texas,False,dan-friedkin
+103,Brian Chesky,12600.0,Technology,Technology,Airbnb,45,M,California,True,brian-chesky
+103,Marijke Mars,12600.0,Food & Beverage,Food & Beverage,"Candy, pet food",62,F,California,False,marijke-mars
+103,Pamela Mars,12600.0,Food & Beverage,Food & Beverage,"Candy, pet food",66,F,Virginia,False,pamela-mars
+103,Tilman Fertitta,12600.0,Food & Beverage,Food & Beverage,"Entertainment, Houston Rockets",69,M,Texas,True,tilman-fertitta
+103,Valerie Mars,12600.0,Food & Beverage,Food & Beverage,"Candy, pet food",67,F,New York,False,valerie-mars
+103,Victoria Mars,12600.0,Food & Beverage,Food & Beverage,"Candy, pet food",69,F,Pennsylvania,False,victoria-mars
+109,Josh Harris,12400.0,Finance & Investments,Private equity & buyouts,Private equity,61,M,Florida,True,josh-harris
+110,Andrew Beal,12300.0,Finance & Investments,"Banking, lending & insurance","Banks, real estate",73,M,Texas,True,andrew-beal
+110,David Steward,12300.0,Technology,Technology,IT provider,75,M,Missouri,True,david-steward
+110,George Kurtz,12300.0,Technology,Technology,Security software,55,M,Arizona,True,george-kurtz
+110,John Paulson,12300.0,Finance & Investments,Hedge funds,Hedge funds,70,M,New York,True,john-paulson
+114,Douglas Leone,12200.0,Finance & Investments,Venture capital,Venture capital,69,M,California,True,douglas-leone
+114,Jimmy Haslam,12200.0,Fashion & Retail,Fashion & Retail,"Gas stations, retail",72,M,Tennessee,False,jimmy-haslam
+116,Bubba Cathy,12000.0,Food & Beverage,Food & Beverage,Chick-fil-A,72,M,Georgia,False,bubba-cathy
+116,Dan Cathy,12000.0,Food & Beverage,Food & Beverage,Chick-fil-A,73,M,Georgia,False,dan-cathy
+116,Trudy Cathy White,12000.0,Food & Beverage,Food & Beverage,Chick-fil-A,70,F,Georgia,False,trudy-cathy-white
+119,Nathan Blecharczyk,11900.0,Technology,Technology,Airbnb,43,M,California,True,nathan-blecharczyk
+120,Antony Ressler,11800.0,Finance & Investments,Private equity & buyouts,Finance,65,M,California,True,antony-ressler
+120,Mark Stevens,11800.0,Finance & Investments,Venture capital,Venture capital,66,M,Colorado,True,mark-stevens
+120,Roger Penske,11800.0,Automotive,Automotive,Cars,89,M,Michigan,True,roger-penske
+120,Terrence Pegula,11800.0,Energy,Energy,Natural gas,75,M,Florida,True,terrence-pegula
+124,Adam Foroughi,11700.0,Technology,Technology,advertising technology,46,M,California,True,adam-foroughi
+124,Michael Dorrell,11700.0,Finance & Investments,Private equity & buyouts,Investing,53,M,New York,True,michael-dorrell
+124,Michael Rubin,11700.0,Fashion & Retail,Fashion & Retail,Online retail,54,M,Pennsylvania,True,michael-rubin
+124,Randa Duncan Williams,11700.0,Energy,Energy,Pipelines,65,F,Texas,False,randa-duncan-williams
+128,Dannine Avara,11600.0,Energy,Energy,Pipelines,62,F,Texas,False,dannine-avara
+128,Milane Frantz,11600.0,Energy,Energy,Pipelines,57,F,Texas,False,milane-frantz
+128,Orlando Bravo,11600.0,Finance & Investments,Private equity & buyouts,Private equity,55,M,Florida,True,orlando-bravo
+128,Ramzi Musallam,11600.0,Finance & Investments,Private equity & buyouts,Private equity,57,M,New York,True,ramzi-musallam
+132,David Duffield,11500.0,Technology,Technology,Business software,85,M,Nevada,True,david-duffield
+132,Micky Arison & family,11500.0,Service,Service,Carnival Cruises,77,M,Florida,False,micky-arison
+134,Ernest Garcia III,11400.0,Automotive,Automotive,Used cars,44,M,Arizona,False,ernest-garcia-iii
+134,John Malone,11400.0,Media & Entertainment,Media & Entertainment,Cable television,85,M,Colorado,True,john-malone
+134,Vinod Khosla,11400.0,Technology,Technology,"Sun Microsystems, venture capital",71,M,California,True,vinod-khosla
+137,Charles Butt,11300.0,Fashion & Retail,Fashion & Retail,Supermarkets,88,M,Texas,False,charles-butt
+137,Scott Duncan,11300.0,Energy,Energy,Pipelines,43,M,Texas,False,scott-duncan
+139,Gayle Benson,11200.0,Sports,Sports,New Orleans Saints,79,F,Louisiana,False,gayle-benson
+139,James Goodnight,11200.0,Technology,Technology,Software,83,M,North Carolina,True,james-goodnight
+141,Charlie Mills,11000.0,Healthcare,Healthcare,Medical supplies,65,M,Illinois,False,charlie-mills
+142,Robert F. Smith,10900.0,Finance & Investments,Private equity & buyouts,Private equity,63,M,Texas,True,robert-f-smith
+142,William Ackman,10900.0,Finance & Investments,Hedge funds,Hedge funds,60,M,New York,True,william-ackman
+144,David Shaw,10800.0,Finance & Investments,Hedge funds,Hedge funds,75,M,New York,True,david-shaw
+144,Ron Baron,10800.0,Finance & Investments,Asset & wealth management,Money management,83,M,New York,True,ron-baron
+146,Stephen Bisciotti,10700.0,Sports,Sports,"Staffing, Baltimore Ravens",66,M,Florida,True,stephen-bisciotti
+147,Ken Xie & family,10600.0,Technology,Technology,Cybersecurity,63,M,California,True,ken-xie
+147,Tom Gores,10600.0,Finance & Investments,Private equity & buyouts,Private equity,62,M,California,True,tom-gores
+149,Don Hankey,10500.0,Finance & Investments,"Banking, lending & insurance",Auto loans,83,M,Nevada,True,don-hankey
+150,Bruce Kovner,10400.0,Finance & Investments,Hedge funds,Hedge funds,81,M,New York,True,bruce-kovner
+151,Ken Langone,10300.0,Finance & Investments,Holding companies & investors,Investments,90,M,New York,True,ken-langone
+151,Patrick Soon-Shiong,10300.0,Healthcare,Healthcare,Pharmaceuticals,74,M,California,True,patrick-soon-shiong
+153,Elisabeth DeLuca & family,10200.0,Food & Beverage,Food & Beverage,Subway,79,F,Florida,False,elisabeth-deluca
+153,Gabe Newell,10200.0,Media & Entertainment,Media & Entertainment,Video games,63,M,Washington,True,gabe-newell
+153,Harry Stine & family,10200.0,Food & Beverage,Food & Beverage,Agriculture,84,M,Iowa,True,harry-stine
+156,Jeff Greene,10100.0,Real Estate,Real Estate,"Real estate, investments",71,M,Florida,True,jeff-greene
+156,Li Ge,10100.0,Healthcare,Healthcare,Pharmaceuticals,59,M,,True,li-ge
+158,Denise York & family,10000.0,Sports,Sports,San Francisco 49ers,75,F,Ohio,False,denise-york
+159,Neil Bluhm,9900.0,Real Estate,Real Estate,Real estate,88,M,Illinois,True,neil-bluhm
+160,David Geffen,9700.0,Media & Entertainment,Media & Entertainment,"Movies, record labels",83,M,California,True,david-geffen
+160,Jay Chaudhry,9700.0,Technology,Technology,Security software,67,M,Nevada,True,jay-chaudhry
+160,Joe Gebbia,9700.0,Technology,Technology,Airbnb,45,M,Texas,True,joe-gebbia
+160,Marc Benioff,9700.0,Technology,Technology,Business software,61,M,California,True,marc-benioff
+164,Judy Faulkner,9600.0,Technology,Technology,Healthcare software,83,F,Wisconsin,True,judy-faulkner
+165,Jonathan Gray,9500.0,Finance & Investments,Private equity & buyouts,Investments,56,M,New York,True,jonathan-gray
+165,Philippe Laffont,9500.0,Finance & Investments,Hedge funds,Hedge fund,58,M,New York,True,philippe-laffont
+167,Jack Dangermond,9400.0,Technology,Technology,Mapping software,81,M,California,True,jack-dangermond
+167,Lin Bin,9400.0,Technology,Technology,Smartphones,58,M,,True,lin-bin
+167,Patrick Ryan,9400.0,Finance & Investments,"Banking, lending & insurance",Insurance,89,M,Illinois,True,patrick-ryan
+170,David Siegel,9300.0,Finance & Investments,Hedge funds,Hedge funds,65,M,New York,True,david-siegel-1
+170,J. Joe Ricketts & family,9300.0,Finance & Investments,Trading & brokerage,TD Ameritrade,85,M,Wyoming,True,j-joe-ricketts
+170,John Overdeck,9300.0,Finance & Investments,Hedge funds,Hedge funds,56,M,New Jersey,True,john-overdeck
+170,Kelcy Warren,9300.0,Energy,Energy,Pipelines,70,M,Texas,True,kelcy-warren
+170,Les Wexner & family,9300.0,Fashion & Retail,Fashion & Retail,Retail,89,M,Ohio,True,les-wexner
+175,Tench Coxe,9200.0,Finance & Investments,Venture capital,Venture capital,68,M,California,True,tench-coxe
+175,Todd Boehly,9200.0,Finance & Investments,Holding companies & investors,Finance,52,M,Florida,True,todd-boehly
+177,Dennis Washington,9100.0,Logistics,Logistics,"Construction, mining",92,M,Montana,True,dennis-washington
+177,Igor Olenicoff,9100.0,Real Estate,Real Estate,Real estate,83,M,Florida,True,igor-olenicoff
+177,Michael Xie,9100.0,Technology,Technology,Cybersecurity,57,M,California,True,michael-xie
+177,Tamara Gustavson,9100.0,Service,Service,Self storage,64,F,Kentucky,False,tamara-gustavson
+181,Leonard Stern,9000.0,Real Estate,Real Estate,Real estate,88,M,New York,False,leonard-stern
+181,Sami Mnaymneh,9000.0,Finance & Investments,Private equity & buyouts,Private equity,65,M,Florida,True,sami-mnaymneh
+181,Tony Tamer,9000.0,Finance & Investments,Private equity & buyouts,Private equity,68,M,New York,True,tony-tamer
+181,William Goldring & family,9000.0,Food & Beverage,Food & Beverage,Liquor,83,M,Louisiana,False,william-goldring
+185,Brian Armstrong,8900.0,Finance & Investments,Crypto,Cryptocurrency,43,M,California,True,brian-armstrong
+185,Stanley Druckenmiller,8900.0,Finance & Investments,Hedge funds,Hedge funds,73,M,New York,True,stanley-druckenmiller
+187,Carl Cook,8800.0,Healthcare,Healthcare,Medical devices,64,M,Indiana,False,carl-cook
+187,Jeffrey Lurie,8800.0,Sports,Sports,Philadelphia Eagles,75,M,Pennsylvania,False,jeffrey-lurie
+187,Robert Rowling,8800.0,Service,Service,"Hotels, investments",72,M,Texas,False,robert-rowling
+190,Min Kao & family,8700.0,Technology,Technology,Navigation equipment,77,M,Kansas,True,min-kao
+190,Steven Rales,8700.0,Manufacturing,Manufacturing,"Manufacturing, investments",75,M,California,True,steven-rales
+192,Dustin Moskovitz,8600.0,Technology,Technology,Facebook,42,M,California,True,dustin-moskovitz
+192,George Soros,8600.0,Finance & Investments,Hedge funds,Hedge funds,96,M,New York,True,george-soros
+192,Michael Milken,8600.0,Finance & Investments,Holding companies & investors,Investments,80,M,California,True,michael-milken
+195,Charles Simonyi,8500.0,Technology,Technology,Microsoft,78,M,Washington,True,charles-simonyi
+196,James Clark,8400.0,Technology,Technology,"Netscape, investments",82,M,Florida,True,james-clark
+196,Leo KoGuan,8400.0,Technology,Technology,IT provider,71,M,,True,leo-koguan
+196,Pauline MacMillan Keinath,8400.0,Food & Beverage,Food & Beverage,Cargill,92,F,Missouri,False,pauline-macmillan-keinath
+199,Andrew Cherng,8300.0,Food & Beverage,Food & Beverage,Fast food,79,M,Nevada,True,andrew-cherng-1
+199,Chris Larsen,8300.0,Finance & Investments,Crypto,Cryptocurrency,66,M,California,True,chris-larsen
+199,Daniel Ziff,8300.0,Finance & Investments,Holding companies & investors,Investments,54,M,New York,False,daniel-ziff
+199,Dirk Ziff,8300.0,Finance & Investments,Holding companies & investors,Investments,62,M,Florida,False,dirk-ziff
+199,John Morris,8300.0,Fashion & Retail,Fashion & Retail,Sporting goods retail,78,M,Missouri,True,john-morris
+199,Marc Rowan,8300.0,Finance & Investments,Private equity & buyouts,Private equity,64,M,New York,True,marc-rowan
+199,Matthew Prince,8300.0,Technology,Technology,Cybersecurity,51,M,Utah,True,matthew-prince
+199,Peggy Cherng,8300.0,Food & Beverage,Food & Beverage,Fast food,78,F,Nevada,True,peggy-cherng
+199,Ray Lee Hunt,8300.0,Energy,Energy,"Oil, real estate",83,M,Texas,False,ray-lee-hunt
+199,Robert Ziff,8300.0,Finance & Investments,Holding companies & investors,Investments,60,M,New York,False,robert-ziff
+199,Vincent Viola,8300.0,Finance & Investments,Trading & brokerage,Electronic trading,70,M,New York,True,vincent-viola
+210,Ty Warner,8200.0,Real Estate,Real Estate,"Plush toys, real estate",82,M,Illinois,True,ty-warner
+211,"Chase Coleman, III.",8100.0,Finance & Investments,Hedge funds,Investments,51,M,New York,True,chase-coleman-iii
+211,"Edward Roski, Jr.",8100.0,Real Estate,Real Estate,Real estate,87,M,California,False,edward-roski-jr
+211,Karen Pritzker,8100.0,Finance & Investments,Holding companies & investors,"Hotels, investments",68,F,Connecticut,False,karen-pritzker
+211,"Paul Tudor Jones, II.",8100.0,Finance & Investments,Hedge funds,Hedge funds,71,M,Florida,True,paul-tudor-jones-ii
+215,Clifford Asness,8000.0,Finance & Investments,Asset & wealth management,Money management,59,M,Connecticut,True,clifford-asness
+216,Steven Spielberg,7900.0,Media & Entertainment,Media & Entertainment,Movies,79,M,New York,True,steven-spielberg
+217,Baiju Bhatt,7800.0,Finance & Investments,Trading & brokerage,Stock trading app,41,M,California,True,baiju-bhatt
+218,Cal McNair,7700.0,Sports,Sports,Houston Texans,64,M,Texas,False,cal-mcnair
+218,Herb Simon,7700.0,Real Estate,Real Estate,Real estate,91,M,Indiana,True,herb-simon
+218,Jack Dorsey,7700.0,Technology,Technology,"Twitter, Square",49,M,California,True,jack-dorsey
+218,Jim Kavanaugh,7700.0,Technology,Technology,IT provider,63,M,Missouri,True,jim-kavanaugh
+218,Michael Kim,7700.0,Finance & Investments,Private equity & buyouts,Private equity,62,M,,True,michael-kim
+218,Michael Moritz,7700.0,Finance & Investments,Venture capital,Venture capital,72,M,California,True,michael-moritz
+224,Ali Ghodsi,7600.0,Technology,Technology,Data analytics,47,M,California,True,ali-ghodsi
+224,Blair Parry-Okeden,7600.0,Media & Entertainment,Media & Entertainment,"Media, automotive",76,F,,False,blair-parry-okeden
+224,Elizabeth Uihlein,7600.0,Manufacturing,Manufacturing,Packaging materials,81,F,Illinois,True,elizabeth-uihlein
+224,Jim Kennedy,7600.0,Media & Entertainment,Media & Entertainment,"Media, automotive",78,M,Georgia,False,jim-kennedy
+224,Joseph Liemandt,7600.0,Technology,Technology,Software,58,M,Texas,True,joseph-liemandt
+224,Marian Ilitch & family,7600.0,Food & Beverage,Food & Beverage,Little Caesars Pizza,93,F,Michigan,True,marian-ilitch
+224,Mike Brown & family,7600.0,Sports,Sports,Cincinnati Bengals,91,M,Ohio,False,mike-brown-1
+224,Richard Uihlein,7600.0,Manufacturing,Manufacturing,Packaging materials,81,M,Illinois,True,richard-uihlein
+232,Thomas Pritzker,7500.0,Finance & Investments,Holding companies & investors,"Hotels, investments",76,M,Illinois,False,thomas-pritzker
+233,"H. Ross Perot, Jr.",7400.0,Real Estate,Real Estate,Real estate,67,M,Texas,False,h-ross-perot-jr
+233,Thai Lee,7400.0,Technology,Technology,IT provider,67,F,Texas,True,thai-lee
+235,Howard Lutnick & family,7300.0,Finance & Investments,Trading & brokerage,Finance,65,M,District of Columbia,True,howard-lutnick
+235,Lynsi Snyder,7300.0,Food & Beverage,Food & Beverage,In-N-Out Burger,44,F,Tennessee,False,lynsi-snyder
+235,Mark Walter,7300.0,Finance & Investments,Asset & wealth management,"Finance, asset management",66,M,Illinois,True,mark-walter
+238,Jayshree Ullal,7200.0,Technology,Technology,Computer networking,65,F,California,True,jayshree-ullal
+238,Mike Hollingshead & family,7200.0,Construction & Engineering,Construction & Engineering,Concrete,56,M,Tennessee,True,mike-hollingshead
+238,Paul Singer,7200.0,Finance & Investments,Hedge funds,Hedge funds,82,M,New York,True,paul-singer
+241,Neal Blue & family,7100.0,Manufacturing,Manufacturing,Defense,91,M,California,True,neal-blue
+241,Rick Caruso,7100.0,Real Estate,Real Estate,Real estate,67,M,California,True,rick-caruso
+241,Ronda Stryker,7100.0,Healthcare,Healthcare,Medical equipment,72,F,Michigan,False,ronda-stryker
+241,Vlad Tenev,7100.0,Finance & Investments,Trading & brokerage,Stock trading app,39,M,California,True,vlad-tenev
+245,Donald Trump,7000.0,Real Estate,Real Estate,Real estate,80,M,Florida,False,donald-trump
+245,Edythe Broad & family,7000.0,Diversified,Diversified,"Homebuilding, insurance",90,F,California,False,edythe-broad
+245,Ion Stoica,7000.0,Technology,Technology,Data analytics,61,M,California,True,ion-stoica
+245,Matei Zaharia,7000.0,Technology,Technology,Data analytics,41,M,California,True,matei-zaharia
+245,Robert Bass,7000.0,Energy,Energy,"Oil, investments",78,M,Texas,False,robert-bass
+245,Robert Clark,7000.0,Construction & Engineering,Construction & Engineering,Construction,67,M,Missouri,True,robert-clark
+251,Charles B. Johnson,6900.0,Finance & Investments,Asset & wealth management,Franklin Templeton,93,M,Florida,False,charles-b-johnson
+251,"Jeremy Jacobs, Sr. & family",6900.0,Service,Service,Food service,86,M,New York,False,jeremy-jacobs-sr
+251,John Brown,6900.0,Healthcare,Healthcare,Medical equipment,92,M,Georgia,True,john-brown
+251,Ronald Wanek,6900.0,Manufacturing,Manufacturing,Furniture,85,M,Florida,True,ronald-wanek
+255,Mark Cuban,6800.0,Media & Entertainment,Media & Entertainment,"Online media, Dallas Mavericks",68,M,Texas,True,mark-cuban
+256,Jim Davis & family,6700.0,Manufacturing,Manufacturing,New Balance,83,M,Massachusetts,True,jim-davis
+256,Mat Ishbia,6700.0,Finance & Investments,"Banking, lending & insurance",Mortgage lender,46,M,Michigan,False,mat-ishbia
+256,Mitchell Morgan & family,6700.0,Real Estate,Real Estate,Real estate,72,M,Pennsylvania,True,mitchell-morgan
+256,Stephen Cohen,6700.0,Technology,Technology,Software,43,M,California,True,stephen-cohen
+260,Johnelle Hunt,6600.0,Logistics,Logistics,Trucking,94,F,Arkansas,True,johnelle-hunt
+261,Eric Lefkofsky,6500.0,Technology,Technology,"Groupon, investments",57,M,Illinois,True,eric-lefkofsky
+261,Jon Yarbrough,6500.0,Gambling & Casinos,Gambling & Casinos,Gambling machines,69,M,Tennessee,True,jon-yarbrough
+261,"Robert Hale, Jr.",6500.0,Telecom,Telecom,Telecom,60,M,Massachusetts,True,robert-hale-jr
+264,Justin Ishbia,6400.0,Finance & Investments,Private equity & buyouts,Private equity,48,M,Illinois,False,justin-ishbia
+264,Margot Birmingham Perot,6400.0,Technology,Technology,"Computer services, real estate",92,F,Texas,False,margot-birmingham-perot
+264,Tom Golisano,6400.0,Service,Service,Payroll services,84,M,Florida,True,tom-golisano
+267,Bill Haslam,6300.0,Fashion & Retail,Fashion & Retail,Gas stations,68,M,Tennessee,False,bill-haslam
+267,Stephen Feinberg & family,6300.0,Finance & Investments,Private equity & buyouts,Private equity,66,M,New York,True,stephen-feinberg
+269,Doug Meijer & family,6200.0,Fashion & Retail,Fashion & Retail,Supermarkets,72,M,Michigan,False,doug-meijer
+269,Hank Meijer & family,6200.0,Fashion & Retail,Fashion & Retail,Supermarkets,74,M,Michigan,False,hank-meijer
+269,John Catsimatidis,6200.0,Energy,Energy,"Oil, real estate",78,M,New York,True,john-catsimatidis
+269,John Henry,6200.0,Sports,Sports,Sports,77,M,Florida,True,john-henry
+269,Mark Meijer & family,6200.0,Fashion & Retail,Fashion & Retail,Supermarkets,68,M,Michigan,False,mark-meijer
+269,Michael Novogratz,6200.0,Finance & Investments,Crypto,"Investments, cryptocurrency",61,M,New York,True,michael-novogratz
+269,Peter Cancro,6200.0,Food & Beverage,Food & Beverage,Jersey Mike's Subs,69,M,Florida,True,peter-cancro
+269,Trevor Rees-Jones,6200.0,Energy,Energy,Oil & gas,75,M,Texas,True,trevor-rees-jones
+277,Annette Lerner & family,6100.0,Real Estate,Real Estate,Real estate,96,F,Maryland,False,annette-lerner
+277,Eren Ozmen,6100.0,Manufacturing,Manufacturing,Aerospace,68,F,Nevada,True,eren-ozmen
+277,Jean (Gigi) Pritzker,6100.0,Service,Service,"Hotels, investments",64,F,California,False,jean-gigi-pritzker
+277,Joseph Grendys,6100.0,Food & Beverage,Food & Beverage,Poultry processing,64,M,Illinois,True,joseph-grendys
+277,Peter Kellogg,6100.0,Finance & Investments,Trading & brokerage,Investments,84,M,New Jersey,False,peter-kellogg
+277,Rakesh Gangwal,6100.0,Service,Service,Airline,73,M,Florida,True,rakesh-gangwal
+283,Archie Aldis Emmerson & family,6000.0,Manufacturing,Manufacturing,"Timberland, lumber mills",97,M,California,True,archie-aldis-emmerson
+283,Barry Diller,6000.0,Media & Entertainment,Media & Entertainment,Online media,84,M,New York,True,barry-diller
+283,Robert Faith,6000.0,Real Estate,Real Estate,Real estate management,62,M,South Carolina,True,robert-faith
+283,"Rupert Johnson, Jr.",6000.0,Finance & Investments,Asset & wealth management,Franklin Templeton,86,M,California,False,rupert-johnson-jr
+287,Fatih Ozmen,5900.0,Manufacturing,Manufacturing,Aerospace,68,M,Nevada,True,fatih-ozmen
+287,Isaac Perlmutter,5900.0,Media & Entertainment,Media & Entertainment,Marvel comics,83,M,Florida,True,isaac-perlmutter
+287,Jeff Skoll,5900.0,Technology,Technology,EBay,61,M,Florida,True,jeff-skoll
+287,Palmer Luckey,5900.0,Technology,Technology,"Virtual reality, defense technology",33,M,California,True,palmer-luckey
+287,Romesh T. Wadhwani,5900.0,Technology,Technology,Software,79,M,California,True,romesh-t-wadhwani
+287,Russell Savage,5900.0,Food & Beverage,Food & Beverage,Energy drinks,56,M,Florida,True,russell-savage
+293,Eric Yuan & family,5800.0,Technology,Technology,Zoom Video Communications,56,M,California,True,eric-yuan
+293,Gary Rollins & family,5800.0,Service,Service,Pest control,82,M,Georgia,False,gary-rollins
+293,Gordon Getty & family,5800.0,Energy,Energy,Getty Oil,92,M,California,False,gordon-getty
+293,Lynda Resnick,5800.0,Food & Beverage,Food & Beverage,Agriculture,83,F,California,True,lynda-resnick
+293,Penny Pritzker,5800.0,Finance & Investments,Holding companies & investors,"Hotels, investments",67,F,Illinois,False,penny-pritzker
+293,Reinhold Schmieding,5800.0,Healthcare,Healthcare,Medical devices,71,M,Florida,True,reinhold-schmieding
+293,"Robert Rich, Jr.",5800.0,Food & Beverage,Food & Beverage,Frozen foods,85,M,Florida,False,robert-rich-jr
+293,Steven Hao,5800.0,Technology,Technology,AI software,30,M,California,True,steven-hao
+293,Stewart Resnick,5800.0,Food & Beverage,Food & Beverage,Agriculture,89,M,California,True,stewart-resnick
+302,Ben Lamm,5700.0,Technology,Technology,Biotech,44,M,Texas,True,ben-lamm
+302,Bert Beveridge,5700.0,Food & Beverage,Food & Beverage,Vodka,64,M,Texas,True,bert-beveridge
+302,Michael Intrator,5700.0,Technology,Technology,Technology,57,M,New York,True,michael-intrator
+302,"Stephen Mandel, Jr.",5700.0,Finance & Investments,Hedge funds,Hedge funds,70,M,Connecticut,True,stephen-mandel-jr
+306,Dan Kurzius,5600.0,Technology,Technology,Email marketing,54,M,Georgia,True,dan-kurzius
+306,Pablo Legorreta,5600.0,Finance & Investments,Holding companies & investors,Investments,62,M,New York,True,pablo-legorreta
+306,Robert Low,5600.0,Logistics,Logistics,Trucking,76,M,Missouri,True,robert-low
+306,Steven Klinsky,5600.0,Finance & Investments,Private equity & buyouts,Investments,70,M,New York,True,steven-klinsky
+306,Thomas Tull,5600.0,Media & Entertainment,Media & Entertainment,"Movies, investments",56,M,Pennsylvania,True,thomas-tull
+311,Andy Mills,5500.0,Healthcare,Healthcare,Medical supplies,65,M,Illinois,False,andy-mills
+311,John A. Sobrato & family,5500.0,Real Estate,Real Estate,Real estate,87,M,California,True,john-a-sobrato
+311,John Sall,5500.0,Technology,Technology,Software,78,M,North Carolina,True,john-sall
+311,Luke Nosek,5500.0,Finance & Investments,Venture capital,Venture capital,51,M,Texas,True,luke-nosek
+315,Larry Gies,5400.0,Finance & Investments,Private equity & buyouts,private equity,60,M,Illinois,True,larry-gies
+315,Ratmir Timashev,5400.0,Technology,Technology,Software,60,M,Connecticut,True,ratmir-timashev
+315,Ronald Lauder,5400.0,Fashion & Retail,Fashion & Retail,Estee Lauder,82,M,New York,False,ronald-lauder
+318,Dan Snyder,5300.0,Sports,Sports,Washington Commanders,61,M,Maryland,True,dan-snyder
+318,George Lucas,5300.0,Media & Entertainment,Media & Entertainment,Star Wars,82,M,California,True,george-lucas
+318,Gwendolyn Sontheim Meyer,5300.0,Food & Beverage,Food & Beverage,Cargill,64,F,California,False,gwendolyn-sontheim-meyer
+318,Joe Mansueto,5300.0,Finance & Investments,Financial data & research,Investment research,70,M,Illinois,True,joe-mansueto
+318,Marc Stad,5300.0,Finance & Investments,Venture capital,Venture capital,47,M,California,True,marc-stad
+318,Paul Foster,5300.0,Energy,Energy,Oil refining,68,M,Texas,True,paul-foster
+318,Phil Ruffin,5300.0,Diversified,Diversified,"Casinos, real estate",91,M,Nevada,True,phil-ruffin
+325,Catherine Commisso & family,5200.0,Telecom,Telecom,Telecom,68,F,New Jersey,False,catherine-commisso-family
+325,Dagmar Dolby & family,5200.0,Technology,Technology,Dolby Laboratories,85,F,California,False,dagmar-dolby
+325,Daniel D'Aniello,5200.0,Finance & Investments,Private equity & buyouts,Private equity,80,M,Virginia,True,daniel-daniello
+325,David Filo,5200.0,Technology,Technology,Yahoo,60,M,California,True,david-filo
+325,Gail Miller & family,5200.0,Automotive,Automotive,Car dealerships,82,F,Utah,True,gail-miller
+325,Helen Johnson-Leipold,5200.0,Manufacturing,Manufacturing,Cleaning products,69,F,Wisconsin,False,helen-johnson-leipold
+325,Jon Stryker,5200.0,Healthcare,Healthcare,Medical equipment,68,M,New York,False,jon-stryker
+325,Mitchell Rales,5200.0,Manufacturing,Manufacturing,"Manufacturing, investments",70,M,Maryland,True,mitchell-rales
+325,Scott Cook,5200.0,Technology,Technology,Software,74,M,California,True,scott-cook
+325,Thomas Hagen & family,5200.0,Finance & Investments,"Banking, lending & insurance",Insurance,90,M,Pennsylvania,False,thomas-hagen
+325,Thomas Secunda,5200.0,Finance & Investments,Financial data & research,Bloomberg LP,72,M,New York,True,thomas-secunda
+336,H. Fisk Johnson,5100.0,Manufacturing,Manufacturing,Cleaning products,68,M,Wisconsin,False,h-fisk-johnson
+336,Marc Lore,5100.0,Technology,Technology,Jet.com,55,M,New York,True,marc-lore
+336,Mark Shoen,5100.0,Automotive,Automotive,U-Haul,75,M,Arizona,False,mark-shoen
+336,Richard Schulze,5100.0,Fashion & Retail,Fashion & Retail,Best Buy,85,M,Florida,True,richard-schulze
+336,S. Curtis Johnson,5100.0,Manufacturing,Manufacturing,Cleaning products,71,M,Wisconsin,False,s-curtis-johnson
+336,Steven Udvar-Hazy,5100.0,Service,Service,Aircraft leasing,80,M,Texas,True,steven-udvar-hazy
+336,Winifred J. Marquart,5100.0,Manufacturing,Manufacturing,Cleaning products,67,F,Virginia,False,winifred-j-marquart
+343,Anthony Pritzker,5000.0,Service,Service,"Hotels, investments",65,M,California,False,anthony-pritzker
+343,Arturo Moreno,5000.0,Sports,Sports,"Billboards, Los Angeles Angels",80,M,Arizona,True,arturo-moreno
+343,Ben Chestnut,5000.0,Technology,Technology,Email marketing,52,M,Georgia,True,ben-chestnut
+343,Byron Trott,5000.0,Finance & Investments,Private equity & buyouts,Investments,67,M,Illinois,True,byron-trott
+343,David MacNeil,5000.0,Manufacturing,Manufacturing,Automobile accessories,67,M,Florida,True,david-macneil
+343,James Chambers,5000.0,Media & Entertainment,Media & Entertainment,"Media, automotive",69,M,New York,False,james-chambers
+343,Katharine Rayner,5000.0,Media & Entertainment,Media & Entertainment,"Media, automotive",81,F,New York,False,katharine-rayner
+343,Margaretta Taylor,5000.0,Media & Entertainment,Media & Entertainment,"Media, automotive",84,F,New York,False,margaretta-taylor
+343,Scott Kapnick,5000.0,Finance & Investments,Private equity & buyouts,Private equity,67,M,Florida,True,scott-kapnick
+343,Todd Christopher,5000.0,Fashion & Retail,Fashion & Retail,Hair care products,63,M,Florida,True,todd-christopher
+353,Jim Coulter,4900.0,Finance & Investments,Private equity & buyouts,Private equity,66,M,California,True,jim-coulter
+353,John Middleton,4900.0,Food & Beverage,Food & Beverage,Tobacco,71,M,Pennsylvania,False,john-middleton
+353,Robert Johnson & family,4900.0,Sports,Sports,"Johnson & Johnson, New York Jets",79,M,Florida,False,robert-johnson-3
+356,Abel Avellan,4800.0,Telecom,Telecom,telecoms,55,M,Florida,True,abel-avellan
+356,"Austen Cargill, II.",4800.0,Food & Beverage,Food & Beverage,Cargill,75,M,Montana,False,austen-cargill-ii
+356,C. Dean Metropoulos,4800.0,Food & Beverage,Food & Beverage,Investments,80,M,Florida,True,c-dean-metropoulos
+356,Daniel Och,4800.0,Finance & Investments,Hedge funds,Hedge funds,65,M,Florida,True,daniel-och
+356,Donald Sterling,4800.0,Real Estate,Real Estate,Real estate,92,M,California,True,donald-sterling
+356,Hamilton James & family,4800.0,Finance & Investments,Private equity & buyouts,Investments,75,M,New York,True,hamilton-james
+356,Herbert Wertheim,4800.0,Finance & Investments,Holding companies & investors,Investments,87,M,Florida,True,herbert-wertheim
+356,"James Cargill, II.",4800.0,Food & Beverage,Food & Beverage,Cargill,77,M,Wisconsin,False,james-cargill-ii
+356,Marianne Liebmann,4800.0,Food & Beverage,Food & Beverage,Cargill,73,F,Montana,False,marianne-liebmann
+356,Rodger Riney & family,4800.0,Finance & Investments,Trading & brokerage,Discount brokerage,80,M,Missouri,True,rodger-riney
+356,Weili Dai,4800.0,Technology,Technology,Semiconductors,65,F,Nevada,True,weili-dai
+367,Don Vultaggio & family,4700.0,Food & Beverage,Food & Beverage,Beverages,74,M,New York,True,don-vultaggio
+367,Eleanor Butt Crook & family,4700.0,Fashion & Retail,Fashion & Retail,Supermarkets,94,F,Texas,False,eleanor-butt-crook
+367,Jennifer Gilbert,4700.0,Finance & Investments,"Banking, lending & insurance",Rocket Mortgage,58,F,Michigan,False,jennifer-gilbert
+367,Michael Jordan,4700.0,Sports,Sports,"Charlotte Hornets, endorsements",63,M,Florida,True,michael-jordan
+367,Peter Gassner,4700.0,Technology,Technology,Software,61,M,California,True,peter-gassner
+367,Reed Hastings,4700.0,Technology,Technology,Netflix,65,M,California,True,reed-hastings
+367,Stewart Rahr,4700.0,Healthcare,Healthcare,Drug distribution,80,M,New York,False,stewart-rahr
+367,Wendy Abrams,4700.0,Healthcare,Healthcare,Medical supplies,61,F,Illinois,False,wendy-abrams
+375,Bob Parsons,4600.0,Technology,Technology,Web hosting,75,M,Arizona,True,bob-parsons
+375,"Drayton McLane, Jr.",4600.0,Fashion & Retail,Fashion & Retail,"Walmart, logistics",90,M,Texas,False,drayton-mclane-jr
+375,Keith Dunleavy & family,4600.0,Healthcare,Healthcare,"Health IT, Investments",57,M,New Hampshire,True,keith-dunleavy
+375,Michael Saylor,4600.0,Technology,Technology,Cryptocurrency,61,M,Florida,True,michael-saylor
+375,Ray Davis,4600.0,Energy,Energy,Pipelines,84,M,Texas,True,ray-davis
+380,"Amos Hostetter, Jr.",4500.0,Media & Entertainment,Media & Entertainment,Cable television,89,M,Massachusetts,True,amos-hostetter-jr
+380,Behdad Eghbali,4500.0,Finance & Investments,Private equity & buyouts,Private equity,50,M,California,True,behdad-eghbali
+380,Carl Thoma,4500.0,Finance & Investments,Private equity & buyouts,Private equity,77,M,Texas,True,carl-thoma
+380,Daniel Sundheim,4500.0,Finance & Investments,Hedge funds,Hedge funds,49,M,New York,True,daniel-sundheim
+380,David Rubenstein,4500.0,Finance & Investments,Private equity & buyouts,Private equity,77,M,Maryland,True,david-rubenstein
+380,"Edward DeBartolo, Jr.",4500.0,Real Estate,Real Estate,Shopping centers,79,M,Florida,False,edward-debartolo-jr
+380,Edward Stack & family,4500.0,Fashion & Retail,Fashion & Retail,Dick's Sporting Goods,71,M,Pennsylvania,False,edward-stack
+380,George Bishop,4500.0,Energy,Energy,Oil & gas,88,M,Texas,True,george-bishop
+380,James Duff,4500.0,Diversified,Diversified,"Tires, diversified",65,M,Mississippi,True,james-duff
+380,José E. Feliciano,4500.0,Finance & Investments,Private equity & buyouts,Private equity,53,M,California,True,jose-e-feliciano
+380,Lynn Schusterman & family,4500.0,Energy,Energy,"Oil & gas, investments",87,F,Oklahoma,False,lynn-schusterman
+380,Sanjit Biswas,4500.0,Technology,Technology,Sensor systems,44,M,California,True,sanjit-biswas
+380,Sid Bass,4500.0,Energy,Energy,"Oil, investments",84,M,Texas,False,sid-bass
+380,Theodore Leonsis,4500.0,Sports,Sports,Sports teams,70,M,Maryland,True,theodore-leonsis
+380,Thomas Duff,4500.0,Diversified,Diversified,"Tires, diversified",69,M,Mississippi,True,thomas-duff
+380,Thomas Siebel,4500.0,Technology,Technology,Business software,73,M,California,True,thomas-siebel
+396,August Troendle,4400.0,Healthcare,Healthcare,Pharmaceutical services,70,M,Ohio,True,august-troendle
+396,Daniel Loeb,4400.0,Finance & Investments,Hedge funds,Hedge funds,64,M,New York,True,daniel-loeb
+396,E. Joe Shoen,4400.0,Automotive,Automotive,U-Haul,76,M,Arizona,False,e-joe-shoen
+396,Jim Davis,4400.0,Service,Service,Staffing & recruiting,66,M,Maryland,True,jim-davis-1
+396,John Bicket,4400.0,Technology,Technology,Sensor systems,46,M,California,True,john-bicket

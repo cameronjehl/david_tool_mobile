@@ -1,0 +1,305 @@
+{
+ "list": "Forbes 400",
+ "year": 2026,
+ "members": 400,
+ "total_net_worth_musd": 8043000.0,
+ "min_net_worth_musd": 4400.0,
+ "by_forbes_category": [
+  {
+   "field": "Finance & Investments",
+   "members": 108,
+   "pct_of_list": 27.0,
+   "net_worth_musd": 1617200.0,
+   "pct_of_wealth": 20.11
+  },
+  {
+   "field": "Technology",
+   "members": 88,
+   "pct_of_list": 22.0,
+   "net_worth_musd": 3889000.0,
+   "pct_of_wealth": 48.35
+  },
+  {
+   "field": "Food & Beverage",
+   "members": 35,
+   "pct_of_list": 8.75,
+   "net_worth_musd": 392900.0,
+   "pct_of_wealth": 4.88
+  },
+  {
+   "field": "Fashion & Retail",
+   "members": 26,
+   "pct_of_list": 6.5,
+   "net_worth_musd": 657000.0,
+   "pct_of_wealth": 8.17
+  },
+  {
+   "field": "Energy",
+   "members": 23,
+   "pct_of_list": 5.75,
+   "net_worth_musd": 245900.0,
+   "pct_of_wealth": 3.06
+  },
+  {
+   "field": "Real Estate",
+   "members": 18,
+   "pct_of_list": 4.5,
+   "net_worth_musd": 158500.0,
+   "pct_of_wealth": 1.97
+  },
+  {
+   "field": "Media & Entertainment",
+   "members": 17,
+   "pct_of_list": 4.25,
+   "net_worth_musd": 141300.0,
+   "pct_of_wealth": 1.76
+  },
+  {
+   "field": "Sports",
+   "members": 16,
+   "pct_of_list": 4.0,
+   "net_worth_musd": 166100.0,
+   "pct_of_wealth": 2.07
+  },
+  {
+   "field": "Healthcare",
+   "members": 15,
+   "pct_of_list": 3.75,
+   "net_worth_musd": 136100.0,
+   "pct_of_wealth": 1.69
+  },
+  {
+   "field": "Manufacturing",
+   "members": 15,
+   "pct_of_list": 3.75,
+   "net_worth_musd": 93300.0,
+   "pct_of_wealth": 1.16
+  },
+  {
+   "field": "Service",
+   "members": 11,
+   "pct_of_list": 2.75,
+   "net_worth_musd": 75200.0,
+   "pct_of_wealth": 0.93
+  },
+  {
+   "field": "Diversified",
+   "members": 8,
+   "pct_of_list": 2.0,
+   "net_worth_musd": 250200.0,
+   "pct_of_wealth": 3.11
+  },
+  {
+   "field": "Automotive",
+   "members": 8,
+   "pct_of_list": 2.0,
+   "net_worth_musd": 91400.0,
+   "pct_of_wealth": 1.14
+  },
+  {
+   "field": "Logistics",
+   "members": 4,
+   "pct_of_list": 1.0,
+   "net_worth_musd": 34600.0,
+   "pct_of_wealth": 0.43
+  },
+  {
+   "field": "Construction & Engineering",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 37800.0,
+   "pct_of_wealth": 0.47
+  },
+  {
+   "field": "Telecom",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 16500.0,
+   "pct_of_wealth": 0.21
+  },
+  {
+   "field": "Gambling & Casinos",
+   "members": 2,
+   "pct_of_list": 0.5,
+   "net_worth_musd": 40000.0,
+   "pct_of_wealth": 0.5
+  }
+ ],
+ "by_field": [
+  {
+   "field": "Technology",
+   "members": 88,
+   "pct_of_list": 22.0,
+   "net_worth_musd": 3889000.0,
+   "pct_of_wealth": 48.35
+  },
+  {
+   "field": "Food & Beverage",
+   "members": 35,
+   "pct_of_list": 8.75,
+   "net_worth_musd": 392900.0,
+   "pct_of_wealth": 4.88
+  },
+  {
+   "field": "Private equity & buyouts",
+   "members": 30,
+   "pct_of_list": 7.5,
+   "net_worth_musd": 297700.0,
+   "pct_of_wealth": 3.7
+  },
+  {
+   "field": "Fashion & Retail",
+   "members": 26,
+   "pct_of_list": 6.5,
+   "net_worth_musd": 657000.0,
+   "pct_of_wealth": 8.17
+  },
+  {
+   "field": "Energy",
+   "members": 23,
+   "pct_of_list": 5.75,
+   "net_worth_musd": 245900.0,
+   "pct_of_wealth": 3.06
+  },
+  {
+   "field": "Hedge funds",
+   "members": 22,
+   "pct_of_list": 5.5,
+   "net_worth_musd": 331600.0,
+   "pct_of_wealth": 4.12
+  },
+  {
+   "field": "Real Estate",
+   "members": 18,
+   "pct_of_list": 4.5,
+   "net_worth_musd": 158500.0,
+   "pct_of_wealth": 1.97
+  },
+  {
+   "field": "Media & Entertainment",
+   "members": 17,
+   "pct_of_list": 4.25,
+   "net_worth_musd": 141300.0,
+   "pct_of_wealth": 1.76
+  },
+  {
+   "field": "Sports",
+   "members": 16,
+   "pct_of_list": 4.0,
+   "net_worth_musd": 166100.0,
+   "pct_of_wealth": 2.07
+  },
+  {
+   "field": "Healthcare",
+   "members": 15,
+   "pct_of_list": 3.75,
+   "net_worth_musd": 136100.0,
+   "pct_of_wealth": 1.69
+  },
+  {
+   "field": "Manufacturing",
+   "members": 15,
+   "pct_of_list": 3.75,
+   "net_worth_musd": 93300.0,
+   "pct_of_wealth": 1.16
+  },
+  {
+   "field": "Holding companies & investors",
+   "members": 13,
+   "pct_of_list": 3.25,
+   "net_worth_musd": 248100.0,
+   "pct_of_wealth": 3.08
+  },
+  {
+   "field": "Trading & brokerage",
+   "members": 11,
+   "pct_of_list": 2.75,
+   "net_worth_musd": 269900.0,
+   "pct_of_wealth": 3.36
+  },
+  {
+   "field": "Service",
+   "members": 11,
+   "pct_of_list": 2.75,
+   "net_worth_musd": 75200.0,
+   "pct_of_wealth": 0.93
+  },
+  {
+   "field": "Asset & wealth management",
+   "members": 10,
+   "pct_of_list": 2.5,
+   "net_worth_musd": 142800.0,
+   "pct_of_wealth": 1.78
+  },
+  {
+   "field": "Venture capital",
+   "members": 9,
+   "pct_of_list": 2.25,
+   "net_worth_musd": 126600.0,
+   "pct_of_wealth": 1.57
+  },
+  {
+   "field": "Diversified",
+   "members": 8,
+   "pct_of_list": 2.0,
+   "net_worth_musd": 250200.0,
+   "pct_of_wealth": 3.11
+  },
+  {
+   "field": "Automotive",
+   "members": 8,
+   "pct_of_list": 2.0,
+   "net_worth_musd": 91400.0,
+   "pct_of_wealth": 1.14
+  },
+  {
+   "field": "Banking, lending & insurance",
+   "members": 7,
+   "pct_of_list": 1.75,
+   "net_worth_musd": 71700.0,
+   "pct_of_wealth": 0.89
+  },
+  {
+   "field": "Logistics",
+   "members": 4,
+   "pct_of_list": 1.0,
+   "net_worth_musd": 34600.0,
+   "pct_of_wealth": 0.43
+  },
+  {
+   "field": "Financial data & research",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 105400.0,
+   "pct_of_wealth": 1.31
+  },
+  {
+   "field": "Construction & Engineering",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 37800.0,
+   "pct_of_wealth": 0.47
+  },
+  {
+   "field": "Crypto",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 23400.0,
+   "pct_of_wealth": 0.29
+  },
+  {
+   "field": "Telecom",
+   "members": 3,
+   "pct_of_list": 0.75,
+   "net_worth_musd": 16500.0,
+   "pct_of_wealth": 0.21
+  },
+  {
+   "field": "Gambling & Casinos",
+   "members": 2,
+   "pct_of_list": 0.5,
+   "net_worth_musd": 40000.0,
+   "pct_of_wealth": 0.5
+  }
+ ]
+}
